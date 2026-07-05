@@ -124,9 +124,25 @@ PROJECT_CSS = """
 .rr-taxonomy-card-grid div{border:1px solid rgba(69,85,102,.18);background:#fff;padding:18px 20px;box-shadow:0 8px 22px rgba(20,34,48,.05)}
 .rr-taxonomy-card-grid strong{display:block;color:#009b67;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
 .rr-taxonomy-card-grid span{display:block;color:#455666;font-weight:700;line-height:1.35}
+.rr-site-footer{background:#101820!important;color:#fff!important;padding:0!important}
+.rr-site-footer a{color:#dfe9ef!important;text-decoration:none!important}
+.rr-site-footer a:hover{color:#fff!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important}
+.rr-footer-inner{max-width:1220px;margin:0 auto;padding:54px 30px 34px}
+.rr-footer-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14)}
+.rr-footer-brand .rr-wordmark{display:inline-flex!important;flex-direction:column!important;gap:0!important;margin-bottom:18px!important}
+.rr-footer-brand p{max-width:720px!important;margin:0!important;color:#c8d3db!important;font-size:17px!important;line-height:1.55!important}
+.rr-footer-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.rr-footer-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;padding:12px 18px!important;border:1px solid rgba(255,255,255,.28)!important;background:#009b67!important;color:#fff!important;font-weight:800!important;line-height:1!important}
+.rr-footer-button-alt{background:transparent!important;color:#fff!important}
+.rr-footer-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;margin-top:34px}
+.rr-footer-col h2{margin:0 0 13px!important;color:#fff!important;font-size:15px!important;line-height:1.2!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+.rr-footer-col a{display:block!important;margin:0 0 8px!important;color:#dfe9ef!important;font-size:14px!important;line-height:1.28!important}
+.rr-footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);color:#aebbc4;font-size:13px}
 @media(max-width:1100px){.rr-project-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 6}.rr-project-hero-grid{grid-template-columns:1fr}}
-@media(max-width:800px){.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}}
+@media(max-width:1100px){.rr-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rr-footer-top{grid-template-columns:1fr}.rr-footer-actions{justify-content:flex-start}}
+@media(max-width:800px){.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}.rr-footer-grid{grid-template-columns:1fr 1fr}.rr-footer-inner{padding:42px 20px 28px}}
 @media(max-width:800px){.rr-taxonomy-card-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.rr-footer-grid{grid-template-columns:1fr}.rr-footer-actions{display:grid;grid-template-columns:1fr}.rr-footer-button{width:100%}}
 </style>
 """
 
@@ -173,6 +189,131 @@ def add_projects_nav(soup):
         link.string = "Projects"
         if about is not None:
             about.insert_before(link)
+
+
+FOOTER_COLUMNS = [
+    (
+        "Services",
+        [
+            ("Retail Buildouts", "/services/retail-buildouts"),
+            ("Tenant Improvements", "/services/tenant-improvement-buildouts"),
+            ("Design-Build", "/services/design-build-construction"),
+            ("Commercial A/C", "/services/commercial-ac-buildouts"),
+            ("Electrical", "/services/electrical-buildout-services"),
+            ("Plumbing", "/services/plumbing-buildout-services"),
+            ("Ground-Up", "/services/ground-up-construction"),
+            ("All Services", "/services"),
+        ],
+    ),
+    (
+        "Project Types",
+        [
+            ("Retail Stores", "/building-types/retail-stores-shopping-centers"),
+            ("Restaurants", "/building-types/restaurants-food-service-spaces"),
+            ("Office Suites", "/building-types/office-professional-suites"),
+            ("Medical Offices", "/building-types/medical-office-clinics"),
+            ("Warehouses", "/building-types/warehouses-light-industrial"),
+            ("Ground-Up Shells", "/building-types/shell-buildings-ground-up"),
+            ("Custom Homes", "/building-types/custom-homes-residential-renovations"),
+            ("All Project Types", "/building-types"),
+        ],
+    ),
+    (
+        "Industries",
+        [
+            ("Property Owners", "/industries/property-owners-developers"),
+            ("Franchise Retail", "/industries/franchise-retail-operators"),
+            ("Restaurants", "/industries/restaurant-hospitality-operators"),
+            ("Facility Managers", "/industries/facility-managers"),
+            ("Commercial Landlords", "/industries/commercial-landlords"),
+            ("Homeowners", "/industries/homeowners-investors"),
+            ("All Industries", "/industries"),
+        ],
+    ),
+    (
+        "Houston Area",
+        [
+            ("Houston", "/locations/houston-tx"),
+            ("Spring", "/locations/spring-tx"),
+            ("The Woodlands", "/locations/the-woodlands-tx"),
+            ("Conroe", "/locations/conroe-tx"),
+            ("Tomball", "/locations/tomball-tx"),
+            ("Cypress", "/locations/cypress-tx"),
+            ("Katy", "/locations/katy-tx"),
+            ("Sugar Land", "/locations/sugar-land-tx"),
+            ("Pearland", "/locations/pearland-tx"),
+            ("League City", "/locations/league-city-tx"),
+        ],
+    ),
+    (
+        "DFW Area",
+        [
+            ("DFW Area", "/locations/dfw-area"),
+            ("Dallas", "/locations/dallas-tx"),
+            ("Fort Worth", "/locations/fort-worth-tx"),
+            ("Arlington", "/locations/arlington-tx"),
+            ("Plano", "/locations/plano-tx"),
+            ("Frisco", "/locations/frisco-tx"),
+            ("McKinney", "/locations/mckinney-tx"),
+            ("Irving", "/locations/irving-tx"),
+            ("Grand Prairie", "/locations/grand-prairie-tx"),
+            ("Denton", "/locations/denton-tx"),
+        ],
+    ),
+    (
+        "Company",
+        [
+            ("East Texas", "/locations/east-texas"),
+            ("Tyler", "/locations/tyler-tx"),
+            ("Longview", "/locations/longview-tx"),
+            ("Projects", "/projects"),
+            ("About", "/about"),
+            ("Contact", "/contact"),
+            ("Privacy", "/privacy"),
+            ("Terms", "/terms"),
+        ],
+    ),
+]
+
+
+def build_footer_markup():
+    columns = []
+    for heading, links in FOOTER_COLUMNS:
+        items = "".join(
+            f'<a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
+            for label, href in links
+        )
+        columns.append(f'<div class="rr-footer-col"><h2>{html.escape(heading)}</h2>{items}</div>')
+    return f"""
+<footer class="primary-footer refresh-footer rr-site-footer">
+  <div class="rr-footer-inner">
+    <div class="rr-footer-top">
+      <div class="rr-footer-brand">
+        <a class="rr-wordmark" href="/"><span class="rr-wm-1">Extreme</span><span class="rr-wm-2">Buildouts LLC</span></a>
+        <p>Commercial and residential buildouts, A/C, electrical, plumbing, design-build, retail finish-outs, renovations, and ground-up construction across East Texas, Greater Houston, and Dallas-Fort Worth.</p>
+      </div>
+      <div class="rr-footer-actions">
+        <a class="rr-footer-button" href="/contact">Request a Buildout Review</a>
+        <a class="rr-footer-button rr-footer-button-alt" href="mailto:hello@extremebuildouts.com">hello@extremebuildouts.com</a>
+      </div>
+    </div>
+    <div class="rr-footer-grid">{''.join(columns)}</div>
+    <div class="rr-footer-bottom">
+      <span>Extreme Buildouts LLC</span>
+      <span>Commercial and residential construction. A/C, electrical, and plumbing coordinated in house.</span>
+    </div>
+  </div>
+</footer>
+"""
+
+
+def replace_footer(soup):
+    footer = soup.find("footer")
+    rich_footer = soupify(build_footer_markup())
+    if footer is not None:
+        footer.replace_with(rich_footer)
+    elif soup.body is not None:
+        soup.body.append(rich_footer)
 
 
 def gallery(items, captions, extra_class="", gallery_id=None):
@@ -347,6 +488,8 @@ def update_footer_and_nav_all():
             continue
         soup = read_soup(path)
         add_projects_nav(soup)
+        ensure_project_css(soup)
+        replace_footer(soup)
         write_soup(path, soup)
 
 
