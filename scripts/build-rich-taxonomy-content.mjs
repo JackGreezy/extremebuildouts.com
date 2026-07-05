@@ -3,7 +3,8 @@ import path from 'path';
 
 const project = path.resolve('/Users/jackgreenberg/Desktop/rank-and-rent/David/clones/extremebuildouts.com');
 const bizName = 'Extreme Buildouts LLC';
-const region = 'East Texas';
+const region = 'Texas';
+const turfRoot = path.resolve('/Users/jackgreenberg/Desktop/rank-and-rent/brandon/turf');
 
 const taxTitles = {
   services: 'Services',
@@ -152,10 +153,103 @@ const locationItems = [
   ['marshall-tx', 'Marshall, TX', 'small commercial buildings, residential work, historic properties, retail suites, and practical repair scopes'],
   ['texarkana-tx', 'Texarkana, TX', 'commercial and residential work where scheduling, material runs, and utility coordination need to be planned clearly'],
   ['nacogdoches-tx', 'Nacogdoches, TX', 'college-area rentals, homes, offices, restaurants, and local retail spaces that need buildout work with clean finishes'],
+  ['houston-tx', 'Houston, TX', 'dense urban sites, medical and restaurant buildouts, warehouse corridors, high humidity, heavy traffic, and demanding inspection schedules'],
+  ['spring-tx', 'Spring, TX', 'retail centers, neighborhood restaurants, office suites, residential additions, wooded lots, and north Houston material logistics'],
+  ['the-woodlands-tx', 'The Woodlands, TX', 'master-planned commercial centers, medical offices, professional suites, hospitality spaces, and occupied-property scheduling'],
+  ['conroe-tx', 'Conroe, TX', 'fast growth, light industrial properties, lake-area homes, retail pads, long utility runs, and mixed new-build and renovation work'],
+  ['tomball-tx', 'Tomball, TX', 'suburban retail, small commercial buildings, rural-edge sites, residential remodels, and schedules affected by access and material runs'],
+  ['cypress-tx', 'Cypress, TX', 'high-growth retail corridors, tenant suites, restaurants, clinics, homes, and buildouts where traffic and inspections shape the schedule'],
+  ['katy-tx', 'Katy, TX', 'retail shell spaces, restaurants, medical suites, west Houston homes, landlord requirements, and finish schedules tied to opening dates'],
+  ['sugar-land-tx', 'Sugar Land, TX', 'professional offices, restaurants, retail spaces, medical suites, HOA-sensitive residential work, and polished finish expectations'],
+  ['richmond-tx', 'Richmond, TX', 'Fort Bend growth, retail pads, residential additions, rural-edge access, restaurant work, and projects that need utility planning early'],
+  ['missouri-city-tx', 'Missouri City, TX', 'commercial remodels, tenant improvements, medical and office spaces, residential work, and southwest Houston traffic constraints'],
+  ['rosenberg-tx', 'Rosenberg, TX', 'retail growth, older commercial spaces, warehouse support areas, residential projects, and schedules shaped by material delivery windows'],
+  ['pearland-tx', 'Pearland, TX', 'retail corridors, healthcare spaces, restaurants, residential remodels, coastal humidity, and fast-moving south Houston development'],
+  ['league-city-tx', 'League City, TX', 'coastal humidity, medical and office suites, restaurants, homes, equipment clearances, and work near bay-area commercial corridors'],
+  ['pasadena-tx', 'Pasadena, TX', 'industrial-adjacent commercial properties, restaurants, retail spaces, warehouses, utility-heavy work, and practical finish requirements'],
+  ['baytown-tx', 'Baytown, TX', 'industrial support buildings, retail corridors, homes, restaurants, coastal weather, and projects where equipment access matters'],
+  ['humble-tx', 'Humble, TX', 'airport-area commercial work, retail centers, restaurants, residential renovations, and north Houston utility coordination'],
+  ['kingwood-tx', 'Kingwood, TX', 'wooded residential properties, neighborhood retail, professional suites, humidity control, drainage awareness, and careful finish protection'],
+  ['dfw-area', 'DFW Area', 'multi-city logistics, tenant improvement schedules, fast-growing suburbs, office parks, restaurant corridors, and a wide spread between suppliers and jobsites'],
+  ['dallas-tx', 'Dallas, TX', 'urban tenant improvements, restaurant and retail buildouts, office renovations, medical suites, traffic constraints, and tight turnover dates'],
+  ['fort-worth-tx', 'Fort Worth, TX', 'industrial support spaces, mixed-use corridors, older commercial buildings, restaurants, homes, and practical renovation sequencing'],
+  ['arlington-tx', 'Arlington, TX', 'entertainment district work, retail centers, restaurants, light commercial spaces, homes, and schedules affected by events and traffic'],
+  ['plano-tx', 'Plano, TX', 'corporate office suites, medical buildouts, restaurants, retail centers, finish-sensitive interiors, and landlord-driven tenant work'],
+  ['frisco-tx', 'Frisco, TX', 'new retail pads, restaurant spaces, medical and office suites, high-growth residential work, and tight inspection and opening schedules'],
+  ['mckinney-tx', 'McKinney, TX', 'historic commercial buildings, new suburban retail, homes, offices, and renovation scopes that need existing-condition review'],
+  ['irving-tx', 'Irving, TX', 'airport and Las Colinas commercial spaces, offices, restaurants, warehouses, and work where access windows can drive the sequence'],
+  ['garland-tx', 'Garland, TX', 'light industrial properties, retail suites, restaurants, homes, and utility-heavy remodels that need early trade coordination'],
+  ['carrollton-tx', 'Carrollton, TX', 'industrial flex spaces, office suites, restaurants, retail centers, and projects where tenant turnover needs clear phasing'],
+  ['richardson-tx', 'Richardson, TX', 'telecom and office corridors, restaurants, medical suites, retail centers, and finish work tied to operational continuity'],
+  ['lewisville-tx', 'Lewisville, TX', 'lake-area commercial corridors, retail suites, restaurants, warehouses, homes, and projects between Dallas and Denton suppliers'],
+  ['grapevine-tx', 'Grapevine, TX', 'hospitality, retail, restaurant, airport-adjacent commercial work, and finish-sensitive spaces with public-facing deadlines'],
+  ['southlake-tx', 'Southlake, TX', 'premium retail, medical offices, residential remodeling, professional suites, and finish standards that need close scope control'],
+  ['euless-tx', 'Euless, TX', 'mid-cities retail, office, restaurant, and warehouse spaces where Dallas and Fort Worth logistics meet'],
+  ['grand-prairie-tx', 'Grand Prairie, TX', 'warehouse corridors, retail and restaurant work, homes, event-area traffic, and utility coordination between Dallas and Fort Worth'],
+  ['north-richland-hills-tx', 'North Richland Hills, TX', 'mid-cities commercial renovations, retail centers, homes, medical suites, and work that needs practical phasing'],
+  ['denton-tx', 'Denton, TX', 'college-area retail, restaurants, rentals, offices, homes, and renovation schedules affected by growth north of DFW'],
+  ['flower-mound-tx', 'Flower Mound, TX', 'professional suites, residential remodels, retail spaces, restaurants, lake-area logistics, and high finish expectations'],
+  ['allen-tx', 'Allen, TX', 'north DFW retail corridors, office suites, restaurants, medical spaces, residential projects, and quick-turn finish schedules'],
 ];
+
+const locationImageSources = {
+  'houston-tx.jpg': 'hometurfhouston.com/public/images/locations/houston-tx.jpg',
+  'spring-tx.jpg': 'hometurfhouston.com/public/images/locations/spring-tx.jpg',
+  'the-woodlands-tx.jpg': 'artificialgrassofhouston.com/public/images/locations/the-woodlands-tx.jpg',
+  'conroe-tx.jpg': 'artificialgrassofhouston.com/public/images/locations/conroe-tx.jpg',
+  'tomball-tx.jpg': 'hometurfhouston.com/public/images/locations/tomball-tx.jpg',
+  'cypress-tx.jpg': 'hometurfhouston.com/public/images/locations/cypress-tx.jpg',
+  'katy-tx.jpg': 'hometurfhouston.com/public/images/locations/katy-tx.jpg',
+  'sugar-land-tx.jpg': 'hometurfhouston.com/public/images/locations/sugar-land-tx.jpg',
+  'richmond-tx.jpg': 'hometurfhouston.com/public/images/locations/richmond-tx.jpg',
+  'missouri-city-tx.jpg': 'hometurfhouston.com/public/images/locations/missouri-city-tx.jpg',
+  'rosenberg-tx.jpg': 'hometurfhouston.com/public/images/locations/rosenberg-tx.jpg',
+  'pearland-tx.jpg': 'hometurfhouston.com/public/images/locations/pearland-tx.jpg',
+  'league-city-tx.jpg': 'hometurfhouston.com/public/images/locations/league-city-tx.jpg',
+  'pasadena-tx.jpg': 'hometurfhouston.com/public/images/locations/pasadena-tx.jpg',
+  'baytown-tx.jpg': 'hometurfhouston.com/public/images/locations/baytown-tx.jpg',
+  'humble-tx.jpg': 'hometurfhouston.com/public/images/locations/humble-tx.jpg',
+  'kingwood-tx.jpg': 'artificialgrasskingwood.com/public/images/locations/kingwood-tx.jpg',
+  'dfw-area.jpg': 'hometurfdallas.com/public/images/locations/dallas-tx-artificial-turf-installation.jpg',
+  'dallas-tx.jpg': 'hometurfdallas.com/public/images/locations/dallas-tx-artificial-turf-installation.jpg',
+  'fort-worth-tx.png': 'hometurffortworth.com/public/images/locations/fort-worth-tx-commercial-artificial-turf-installation.png',
+  'arlington-tx.jpg': 'hometurfdallas.com/public/images/locations/arlington-tx-artificial-turf-installation.jpg',
+  'plano-tx.jpg': 'hometurfdallas.com/public/images/locations/plano-tx-artificial-turf-installation.jpeg',
+  'frisco-tx.jpg': 'hometurfdallas.com/public/images/locations/frisco-tx-artificial-turf-installation.jpg',
+  'mckinney-tx.jpg': 'hometurfdallas.com/public/images/locations/mckinney-tx-artificial-turf-installation.jpg',
+  'irving-tx.jpg': 'hometurfdallas.com/public/images/locations/irving-tx-artificial-turf-installation.jpg',
+  'garland-tx.jpg': 'hometurfdallas.com/public/images/locations/garland-tx-artificial-turf-installation.jpg',
+  'carrollton-tx.jpg': 'hometurfdallas.com/public/images/locations/carrollton-tx-artificial-turf-installation.jpg',
+  'richardson-tx.jpg': 'hometurfdallas.com/public/images/locations/richardson-tx-artificial-turf-installation.jpg',
+  'lewisville-tx.jpg': 'hometurfdallas.com/public/images/locations/lewisville-tx-artificial-turf-installation.jpg',
+  'grapevine-tx.jpg': 'artificialturfgrapevine.com/public/images/locations/grapevine-tx-artificial-grass-installation.jpg',
+  'southlake-tx.jpg': 'artificialturfgrapevine.com/public/images/locations/southlake-tx-artificial-grass-installation.jpg',
+  'euless-tx.jpg': 'hometurffortworth.com/public/images/locations/euless-tx-commercial-artificial-turf-installation.jpg',
+  'grand-prairie-tx.webp': 'artificialgrassgrandprairie.com/public/images/locations/grand-prairie-tx-commercial-artificial-grass-installation.webp',
+  'north-richland-hills-tx.jpg': 'hometurffortworth.com/public/images/locations/north-richland-hills-tx-commercial-artificial-turf-installation.jpg',
+  'denton-tx.jpg': 'artificialgrassflowermound.com/public/images/locations/denton-tx-premium-artificial-grass-installation.jpg',
+  'flower-mound-tx.webp': 'artificialgrassflowermound.com/public/images/locations/flower-mound-tx-premium-artificial-grass-installation.webp',
+  'allen-tx.jpg': 'artificialgrasssugarland.com/public/images/locations/allen-tx-artificial-turf-installation.jpg',
+};
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
+}
+
+function copyLocationImages() {
+  const outDir = path.join(project, 'public', 'images', 'locations');
+  ensureDir(outDir);
+  for (const stale of ['grand-prairie-tx.jpg']) {
+    fs.rmSync(path.join(outDir, stale), { force: true });
+  }
+  for (const [fileName, sourceRel] of Object.entries(locationImageSources)) {
+    const source = path.join(turfRoot, sourceRel);
+    if (!fs.existsSync(source)) {
+      console.warn(`Missing location image source: ${sourceRel}`);
+      continue;
+    }
+    fs.copyFileSync(source, path.join(outDir, fileName));
+  }
 }
 
 function slugTitle(slug) {
@@ -211,11 +305,43 @@ function serviceContent(item) {
       ]),
     },
     {
-      heading: 'Built For East Texas Conditions',
+      heading: 'Built For Texas Conditions',
       html: paragraphs([
         `${region} construction has its own practical constraints. Heat, humidity, storm windows, long material runs, rural service access, older building stock, and fast-growing commercial corridors can all affect schedule and cost. Extreme Buildouts LLC plans around those realities instead of pricing the work as if every site were a clean new shell.`,
         `If the project is occupied, the plan accounts for dust, noise, utility interruptions, parking, customer access, and end-of-day cleanup. If the project is vacant, the plan focuses on efficient sequence, trade access, and keeping the finish date realistic. Either way, the scope is tied to field conditions rather than assumptions that fall apart once demolition starts.`,
         `The final deliverable is a usable space. That means the A/C works with the layout, electrical service supports the equipment, plumbing is where the fixtures need it, finishes are complete, and the owner is not left managing unresolved trade gaps after the crew leaves.`,
+      ]),
+    },
+    {
+      heading: 'Existing Conditions That Change The Work',
+      html: paragraphs([
+        `A strong ${item.name.toLowerCase()} plan separates known work from field-verification work before crews mobilize. Existing panels, shutoffs, roof penetrations, above-ceiling space, slab conditions, wall framing, utility chases, and equipment access all need attention because one hidden condition can change the trade sequence.`,
+        `Extreme Buildouts LLC documents those risk points in practical language. If a ceiling must be opened before a final route is confirmed, that gets identified. If a water line, drain, panel, or duct path could limit the layout, that gets reviewed before finishes are ordered. Owners get a clearer scope because the plan is built around the property that is actually there.`,
+        `That approach matters on smaller jobs as much as larger ones. A short buildout can still be delayed by a missing disconnect, blocked cleanout, overloaded panel, or duct route that conflicts with framing. Early field review keeps those details visible before the schedule depends on them.`,
+      ]),
+    },
+    {
+      heading: 'Decisions Owners Should Make Early',
+      html: paragraphs([
+        `${item.name} work moves faster when owner decisions are made before the field schedule is compressed. Equipment selections, fixture counts, lighting levels, finish standards, restroom changes, access rules, and operating hours all affect cost and timing. Extreme Buildouts LLC brings those decisions forward instead of letting them surface after rough-in starts.`,
+        `Some decisions affect more than one trade. A new appliance can require power, plumbing, ventilation, blocking, finish clearance, and inspection planning. A wall shift can affect ceiling layout, return air, outlets, switches, trim, and flooring transitions. The construction scope needs those connections mapped early so the finished work does not feel patched together.`,
+        `When a decision is not ready, it can be carried as an allowance, alternate, or field-verification item. That keeps the project honest without freezing progress around details that still need owner input.`,
+      ]),
+    },
+    {
+      heading: 'How Pricing And Scheduling Stay Clear',
+      html: paragraphs([
+        `A useful proposal for ${item.name.toLowerCase()} should explain the trade scope, the finish scope, the assumed schedule, the exclusions, and the items that may change after field review. Extreme Buildouts LLC avoids vague construction language because vague language creates arguments at the worst point in the job.`,
+        `The schedule is built around the sequence of work: demolition or prep, rough-in, inspections, close-in, finishes, equipment setting, startup, punch, and cleanup. When the property is occupied, the plan also accounts for shutdowns, temporary access, noisy work, parking, and protection of active areas.`,
+        `Owners can use that structure to make decisions before money is spent in the wrong order. The result is a cleaner buildout conversation, tighter trade coordination, and fewer surprises as the project moves toward turnover.`,
+      ]),
+    },
+    {
+      heading: 'Closeout That Holds Up After Turnover',
+      html: paragraphs([
+        `Closeout is not just the final walkthrough. For ${item.name.toLowerCase()}, closeout means the finished space can be used without unresolved trade conflicts, missing access, or visible fixes that should have been solved earlier. Extreme Buildouts LLC checks the work against the intended use of the space, not only against a list of completed tasks.`,
+        `That includes device placement, fixture setting, trim transitions, service clearances, equipment startup, cleanup, and the punch items that affect daily use. A space can look close to finished and still fail the owner if the A/C access is blocked, an outlet is missing, a drain is wrong, or the finish work does not match the operating need.`,
+        `The closeout goal is a space that opens cleanly, works correctly, and gives the owner confidence that A/C, electrical, plumbing, construction, and finish work were coordinated under one plan.`,
       ]),
     },
   ];
@@ -247,6 +373,45 @@ function buildingContent(slug, name, needs) {
         `Extreme Buildouts LLC keeps the conversation grounded in jobsite reality: what is known, what needs to be opened up, what could change the price, and what has to happen before the space is ready. That is the kind of clarity owners need when a project has real money and a real deadline behind it.`,
       ]),
     },
+    {
+      heading: 'Early Review Before The Buildout Starts',
+      html: paragraphs([
+        `The first walk-through for ${name.toLowerCase()} should answer more than whether the space is empty. Extreme Buildouts LLC looks at utility locations, roof or attic access, slab conditions, panel capacity, restrooms, existing equipment, ceiling height, structural limits, and the path materials will take into the property.`,
+        `That review helps separate easy finish work from work that requires trade planning. A simple-looking wall change can affect ductwork, lighting, outlets, fire blocking, plumbing, flooring, and trim. A new use can require different ventilation, dedicated circuits, added fixtures, or changes to the way occupants move through the property.`,
+        `The owner gets a better scope when those conditions are discussed before crews arrive. Unknowns can be priced as allowances or field-verification items, and known work can be sequenced with fewer late surprises.`,
+      ]),
+    },
+    {
+      heading: 'Mechanical, Electrical, And Plumbing Fit',
+      html: paragraphs([
+        `${name} often fail or succeed in the hidden work: A/C sizing and routing, electrical distribution, plumbing access, equipment clearances, service shutoffs, and inspection timing. Extreme Buildouts LLC treats those details as part of the building plan, not as separate add-ons that get solved after walls are framed.`,
+        `The finished space has to be comfortable, serviceable, and ready for the way it will be used. That requires planning for duct paths, returns, drains, vents, water heaters, panels, dedicated circuits, lighting controls, and where future maintenance will happen. These details are easier and cheaper to solve before finishes cover the work.`,
+        `When MEP work is coordinated early, finish work can stay cleaner. Floors, ceilings, walls, trim, doors, and paint do not have to be opened again because a trade conflict was missed during rough-in.`,
+      ]),
+    },
+    {
+      heading: 'Budget Discipline Without Cutting The Wrong Corners',
+      html: paragraphs([
+        `Every ${name.toLowerCase()} project has budget pressure, but the wrong shortcut can create bigger costs after turnover. Extreme Buildouts LLC helps owners compare options around scope, phasing, finish level, material choices, trade sequencing, and items that can safely wait without damaging the finished result.`,
+        `The budget conversation should identify what must happen for code, safety, comfort, and function before focusing on optional finishes. A less expensive finish can be reasonable. Skipping service access, undersizing infrastructure, hiding a known utility issue, or failing to protect an occupied area usually is not.`,
+        `A clear scope gives the owner control. It shows where money is going, what decisions affect cost, and which conditions could change the budget after demolition or utility review.`,
+      ]),
+    },
+    {
+      heading: 'Phasing Around People And Operations',
+      html: paragraphs([
+        `${name} may involve tenants, customers, residents, staff, vendors, inspectors, or neighboring properties. Extreme Buildouts LLC plans around those people as part of the construction sequence. Access, noise, dust, parking, deliveries, temporary shutdowns, and end-of-day cleanup can affect whether the project feels controlled or chaotic.`,
+        `Some projects need night or off-hour work. Others need a clean break between rough construction and finish installation. Residential work may need temporary utility planning. Commercial work may need landlord communication, inspection windows, or careful turnover around an opening date.`,
+        `Phasing is most useful when it is written into the scope instead of improvised. Clear phases help owners understand what areas will be affected, when decisions are due, and how the work moves from rough conditions to a usable finished space.`,
+      ]),
+    },
+    {
+      heading: 'Final Checks Before The Space Is Used',
+      html: paragraphs([
+        `The final review for ${name.toLowerCase()} connects the original scope to the finished condition. Extreme Buildouts LLC checks the visible finish work, the hidden trade work that supports it, the access needed for future service, and the punch items that affect daily use.`,
+        `That review can include A/C startup, electrical device placement, fixture setting, door and hardware operation, flooring transitions, paint touchups, equipment access, cleanup, and owner walkthrough items. A clean closeout reduces the chance that the owner has to chase small trade gaps after moving in.`,
+      ]),
+    },
   ];
 }
 
@@ -276,6 +441,45 @@ function industryContent(slug, name, needs) {
         `The goal is a finished space that works for the owner after the crew leaves. That means comfortable air, reliable power, working plumbing, durable finishes, clean transitions, and a closeout process that does not leave unresolved trade items behind.`,
       ]),
     },
+    {
+      heading: 'What Gets Reviewed Before Pricing',
+      html: paragraphs([
+        `${name} need pricing that reflects the building, the schedule, and the operational pressure behind the work. Extreme Buildouts LLC reviews existing conditions, utility capacity, access, equipment needs, finish expectations, required inspections, and the places where one trade can block another.`,
+        `That review is practical. A restaurant operator needs ventilation, plumbing, power, equipment placement, and health-related details considered together. A landlord may need a suite cleaned up quickly without creating a future maintenance issue. A homeowner may need trade upgrades without losing use of the house for longer than necessary.`,
+        `When pricing starts with those realities, the scope becomes easier to understand. Owners can see which work is required, which choices are discretionary, and what needs to be verified in the field before final decisions are made.`,
+      ]),
+    },
+    {
+      heading: 'Budget, Phasing, And Downtime',
+      html: paragraphs([
+        `Downtime is a real cost for ${name.toLowerCase()}. A buildout that saves money on paper can still be expensive if it disrupts operations, delays turnover, or requires finished work to be reopened. Extreme Buildouts LLC builds the sequence around the property use so the construction plan supports the business or household using the space.`,
+        `The scope can identify phases for demolition, rough-in, inspections, finish work, equipment setting, and punch items. It can also separate immediate work from alternates when the owner needs budget control. That gives owners a way to make decisions without losing sight of the work that must happen first.`,
+        `Clear phasing also helps field crews. Everyone understands which areas are active, what has to stay protected, when utilities may be interrupted, and what has to be complete before the next trade begins.`,
+      ]),
+    },
+    {
+      heading: 'Construction Details That Protect The Finished Space',
+      html: paragraphs([
+        `${name} usually care most about the finished result, but the quality of that result is decided during rough construction. Framing, blocking, duct routes, drains, vents, panel loads, lighting controls, material transitions, and service access all shape how the finished space performs.`,
+        `Extreme Buildouts LLC pays attention to those details before finish materials are installed. That reduces the chance of visible surface fixes, poor access, awkward equipment placement, or repairs that should have been avoided during planning.`,
+        `The work is organized so the finished space can be used, maintained, and adjusted over time. That kind of planning is especially important when owners are investing in a space they expect to operate from every day.`,
+      ]),
+    },
+    {
+      heading: 'One Responsible Construction Conversation',
+      html: paragraphs([
+        `A disconnected handoff between trades creates confusion for ${name.toLowerCase()}. One contractor may assume another contractor is handling access, rough-in, cleanup, protection, inspection timing, or final device placement. Extreme Buildouts LLC keeps A/C, electrical, plumbing, and construction work in one coordinated conversation.`,
+        `That does not remove every unknown condition, but it makes unknowns easier to manage. When a field issue appears, the decision can be made with the full construction sequence in mind instead of solving one trade problem while creating another.`,
+        `The owner gets a clearer point of contact, a tighter scope, and a better chance of reaching turnover without a pile of unresolved trade questions left behind.`,
+      ]),
+    },
+    {
+      heading: 'Closeout That Supports The Next Use',
+      html: paragraphs([
+        `Closeout for ${name.toLowerCase()} should support the next day of use, not just the last day of construction. Extreme Buildouts LLC reviews comfort, power, plumbing, finishes, service access, cleanup, punch items, and owner questions before the work is treated as complete.`,
+        `That matters when a tenant is moving in, a restaurant is preparing equipment, a property owner is showing a suite, a facility manager is reopening an area, or a homeowner is returning to normal routines. The finished space should be ready for that next step without unresolved trade gaps slowing it down.`,
+      ]),
+    },
   ];
 }
 
@@ -298,11 +502,51 @@ function locationContent(slug, name, local) {
       ]),
     },
     {
-      heading: 'East Texas Field Conditions',
+      heading: 'Texas Field Conditions',
       html: paragraphs([
         `${region} work has to account for heat, humidity, storm timing, soil movement, older structures, rural access, and long material runs. In ${name}, those details can affect everything from scheduling to A/C performance to how plumbing and electrical work are routed through an existing building.`,
         `Extreme Buildouts LLC keeps the project grounded in field conditions. If the existing building needs correction before finish work, that gets documented. If the schedule depends on a permit, inspection, special material, or equipment delivery, that gets called out before the owner commits to a finish date.`,
         `The end goal is simple: a finished space that works. Comfortable air, reliable electrical, working plumbing, clean finishes, and a closeout process that leaves the owner with a usable commercial or residential property.`,
+      ]),
+    },
+    {
+      heading: 'Local Planning Factors',
+      html: paragraphs([
+        `${name} projects need a scope that respects the local market instead of treating every property like the same clean shell. Existing buildings may have older panels, limited ceiling space, patched plumbing, roof access issues, slab surprises, or finish conditions that affect the buildout. Newer spaces can still have landlord rules, incomplete utility information, or equipment needs that change the plan.`,
+        `The local conditions around ${local} make early planning important. Extreme Buildouts LLC reviews parking, access, delivery routes, utility shutoff points, nearby occupied areas, inspection timing, and the owner deadline before the sequence is set. That keeps the project grounded in what the field crew will actually face.`,
+        `A good scope also protects the owner from assumptions. If a condition needs to be opened, measured, tested, or verified, it should be called out before crews start depending on it. That makes the construction conversation clearer and helps avoid change orders that come from preventable blind spots.`,
+      ]),
+    },
+    {
+      heading: 'Commercial Buildouts That Fit The Market',
+      html: paragraphs([
+        `Commercial construction in ${name} can include retail finish-outs, restaurant work, medical and office suites, warehouse support areas, light industrial improvements, shell-to-finish projects, and renovations inside active buildings. Each use creates different pressure on A/C, electrical, plumbing, layout, finishes, and inspections.`,
+        `Retail and restaurant spaces often need quick opening schedules, public-facing finishes, lighting decisions, signage coordination, restroom planning, and equipment rough-ins. Office and medical spaces need clean circulation, comfort, privacy, durable finishes, and reliable power. Warehouse and industrial-adjacent spaces need equipment access, ventilation, durable surfaces, and practical utility routing.`,
+        `Extreme Buildouts LLC builds the scope around the intended use. That means the trade plan supports the way people will move through the space, where equipment will sit, how utilities will be serviced, and what has to be complete before the owner can open or occupy the property.`,
+      ]),
+    },
+    {
+      heading: 'Residential Remodeling And Additions',
+      html: paragraphs([
+        `Residential work in ${name} needs a different kind of planning because the project often happens around daily life. Kitchens, bathrooms, additions, garage conversions, utility upgrades, HVAC changes, and finish renovations can all affect access, dust control, parking, family schedules, and temporary utility interruptions.`,
+        `Extreme Buildouts LLC reviews how the house is currently built before committing to the construction sequence. Framing, attic access, slab conditions, drain locations, panel capacity, duct routing, roofline changes, and finish transitions all matter when a remodel or addition has to feel like it belongs to the existing home.`,
+        `The goal is to keep the owner informed without turning the project into a daily guessing game. Clear phases, clear decisions, and clear cleanup expectations make residential work easier to live through and easier to finish correctly.`,
+      ]),
+    },
+    {
+      heading: 'MEP Coordination Before Finishes',
+      html: paragraphs([
+        `A/C, electrical, and plumbing decisions should be made before the finish schedule takes over. In ${name}, that means checking load needs, duct paths, equipment access, circuit requirements, lighting placement, fixture locations, drain and vent routing, shutoffs, water heater placement, and inspection windows early enough to adjust the layout if needed.`,
+        `When trade work is treated as separate side work, the finished space usually shows it. Surface fixes, awkward access panels, misaligned fixtures, missing outlets, poor comfort, or blocked service areas are often the result of decisions made too late. Extreme Buildouts LLC coordinates those trades as part of the buildout plan.`,
+        `That coordination is especially important for commercial spaces changing use, restaurants adding equipment, offices adding rooms, homes adding conditioned space, and older buildings where existing systems may not match the new plan.`,
+      ]),
+    },
+    {
+      heading: 'Scope, Budget, And Closeout',
+      html: paragraphs([
+        `A construction scope in ${name} should explain what is included, what is excluded, what needs owner selection, what depends on field verification, and what schedule assumptions are being used. Extreme Buildouts LLC keeps those details visible because hidden assumptions are where budget problems usually start.`,
+        `The budget can be organized around required work, finish choices, alternates, and items that may wait for a later phase. That gives owners a way to make decisions without cutting the work that protects function, service access, comfort, or code compliance.`,
+        `Closeout is handled with the same discipline. The finished space should have working A/C, reliable power, completed plumbing, clean finishes, accessible equipment, and punch items resolved before the owner is left to manage the aftermath. That is the difference between a buildout that merely looks done and a project that is ready to use.`,
       ]),
     },
   ];
@@ -346,6 +590,7 @@ function writeItem(taxonomy, slug, name, metaDescription, sections, faqs = faqsF
 ensureDir(project);
 ensureDir(path.join(project, 'data'));
 ensureDir(path.join(project, 'scripts'));
+copyLocationImages();
 
 fs.writeFileSync(path.join(project, 'home.config.json'), `${JSON.stringify({
   domain: 'extremebuildouts.com',

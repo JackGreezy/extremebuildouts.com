@@ -96,7 +96,15 @@ PROJECT_CSS = """
 .rr-project-metrics div{border:1px solid rgba(69,85,102,.18);padding:16px 18px;background:#fff}
 .rr-project-metrics strong{display:block;color:#009b67;font-size:24px;line-height:1}
 .rr-project-metrics span{display:block;margin-top:6px;font-weight:700;color:#455666}
+.rr-taxonomy-intro{max-width:1120px;margin:10px 0 32px}
+.rr-taxonomy-intro h1{margin:18px 0 14px!important}
+.rr-taxonomy-intro p{max-width:980px!important;color:#455666!important}
+.rr-taxonomy-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.rr-taxonomy-card-grid div{border:1px solid rgba(69,85,102,.18);background:#fff;padding:18px 20px;box-shadow:0 8px 22px rgba(20,34,48,.05)}
+.rr-taxonomy-card-grid strong{display:block;color:#009b67;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
+.rr-taxonomy-card-grid span{display:block;color:#455666;font-weight:700;line-height:1.35}
 @media(max-width:800px){.rr-project-index-grid,.rr-project-gallery,.rr-project-metrics{grid-template-columns:1fr}.rr-project-index-card img,.rr-project-gallery img,.rr-project-gallery.rr-field-gallery img{height:auto}.rr-project-video video{max-height:none}}
+@media(max-width:800px){.rr-taxonomy-card-grid{grid-template-columns:1fr}}
 </style>
 """
 
@@ -304,6 +312,113 @@ def update_footer_and_nav_all():
         write_soup(path, soup)
 
 
+INDEX_COPY = {
+    "services.html": {
+        "eyebrow": "Services",
+        "title": "Buildout Services",
+        "body": (
+            "Extreme Buildouts LLC handles commercial and residential construction work with A/C, "
+            "electrical, plumbing, renovation, tenant improvement, and ground-up planning tied into one field scope. "
+            "Each service starts with existing conditions, owner goals, trade conflicts, inspection needs, and the schedule pressure behind the work."
+        ),
+        "cards": [
+            ("Planning", "Site walks, utility review, layout decisions, and budget alternates before crews mobilize."),
+            ("Trades", "A/C, electrical, plumbing, framing, finishes, equipment, and punch work sequenced together."),
+            ("Turnover", "A usable finished space with clear closeout, service access, and fewer unresolved trade gaps."),
+        ],
+    },
+    "building-types.html": {
+        "eyebrow": "Project Types",
+        "title": "Construction By Building Type",
+        "body": (
+            "Retail suites, restaurants, offices, medical spaces, warehouses, homes, and shell buildings all need different construction decisions. "
+            "Extreme Buildouts LLC reviews the way the property will be used, how people move through it, and which trade systems have to support the finished layout."
+        ),
+        "cards": [
+            ("Commercial", "Tenant improvements, restaurants, offices, medical suites, retail spaces, and light industrial work."),
+            ("Residential", "Remodels, additions, comfort upgrades, utility changes, and finish work inside occupied homes."),
+            ("Ground Up", "Site access, shell work, MEP rough-in, interior buildout, inspections, and final turnover."),
+        ],
+    },
+    "industries.html": {
+        "eyebrow": "Industries",
+        "title": "Construction For Owners And Operators",
+        "body": (
+            "Property owners, franchise operators, restaurants, landlords, facility managers, homeowners, and investors need scopes that match real operating pressure. "
+            "Extreme Buildouts LLC plans around downtime, tenant coordination, equipment requirements, finish expectations, and the work that has to be complete before occupancy."
+        ),
+        "cards": [
+            ("Operators", "Opening dates, brand standards, customer areas, equipment, and finish details kept in sequence."),
+            ("Owners", "Budget clarity, field verification, lease obligations, and long-term maintenance considered early."),
+            ("Facilities", "Repairs, renovations, trade upgrades, and phased work planned around active properties."),
+        ],
+    },
+    "locations.html": {
+        "eyebrow": "Service Areas",
+        "title": "Texas Buildout Service Areas",
+        "body": (
+            "Extreme Buildouts LLC serves East Texas, Greater Houston, and the DFW area with practical buildout planning and field execution. "
+            "The work changes by market: urban tenant improvements, suburban retail, restaurants, medical suites, homes, warehouses, and ground-up projects all bring different access, utility, and scheduling constraints."
+        ),
+        "cards": [
+            ("East Texas", "Retail, residential, light commercial, and renovation work across Tyler, Longview, Marshall, Texarkana, and Nacogdoches."),
+            ("Houston Area", "Commercial buildouts, restaurants, medical spaces, homes, and utility-heavy scopes across greater Houston."),
+            ("DFW Area", "Tenant improvements, offices, retail, restaurants, warehouses, and residential work across Dallas-Fort Worth suburbs."),
+        ],
+    },
+}
+
+
+def enhance_taxonomy_indexes():
+    for filename, copy_block in INDEX_COPY.items():
+        path = PUBLIC / filename
+        if not path.exists():
+            continue
+        soup = read_soup(path)
+        if soup.find(class_="rr-taxonomy-intro"):
+            continue
+        ensure_project_css(soup)
+        target = soup.select_one(".filter-reset-padding")
+        if target is None:
+            continue
+        cards = "".join(
+            f"<div><strong>{html.escape(label)}</strong><span>{html.escape(text)}</span></div>"
+            for label, text in copy_block["cards"]
+        )
+        intro = soupify(
+            f"""
+<section class="rr-taxonomy-intro">
+  <h6>{html.escape(copy_block["eyebrow"])}</h6>
+  <h1>{html.escape(copy_block["title"])}</h1>
+  <p>{html.escape(copy_block["body"])}</p>
+  <div class="rr-taxonomy-card-grid">{cards}</div>
+</section>
+"""
+        )
+        target.insert_after(intro)
+        write_soup(path, soup)
+
+
+def clean_not_found_copy():
+    path = PUBLIC / "404.html"
+    if not path.exists():
+        return
+    soup = read_soup(path)
+    changed = False
+    for node in soup.find_all(string=True):
+        text = str(node)
+        updated = text.replace("Page not found", "Not Found")
+        updated = updated.replace(
+            "The page you are looking for is not available. Return to the main site or contact Extreme Buildouts LLC to discuss your project.",
+            "That route is not available. Return to the main site or contact Extreme Buildouts LLC to discuss your project.",
+        )
+        if updated != text:
+            node.replace_with(NavigableString(updated))
+            changed = True
+    if changed:
+        write_soup(path, soup)
+
+
 def update_sitemap():
     path = PUBLIC / "sitemap.xml"
     if not path.exists():
@@ -330,14 +445,32 @@ def update_llms():
     path.write_text(text, encoding="utf-8")
 
 
+def strip_generated_html_whitespace():
+    for path in PUBLIC.rglob("*.html"):
+        if path.name.endswith(".ref"):
+            continue
+        text = path.read_text(encoding="utf-8")
+        lines = []
+        for line in text.splitlines():
+            while " \t" in line:
+                line = line.replace(" \t", "\t")
+            lines.append(line.rstrip())
+        cleaned = "\n".join(lines) + "\n"
+        if cleaned != text:
+            path.write_text(cleaned, encoding="utf-8")
+
+
 def main():
     media = json.loads(MEDIA_JSON.read_text(encoding="utf-8"))
     build_project_detail(media)
     build_projects_index(media)
     add_home_teaser(media)
+    enhance_taxonomy_indexes()
+    clean_not_found_copy()
     update_footer_and_nav_all()
     update_sitemap()
     update_llms()
+    strip_generated_html_whitespace()
     print("add-project-gallery: projects page, detail page, nav, sitemap, and homepage teaser updated")
 
 
