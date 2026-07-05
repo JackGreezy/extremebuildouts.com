@@ -1,0 +1,74 @@
+{
+  "slug": "commercial-renovations",
+  "taxonomy": "services",
+  "route": "/services/commercial-renovations",
+  "name": "Commercial Renovations",
+  "title": "Commercial Renovations | Extreme Buildouts LLC",
+  "metaDescription": "Commercial Renovations from Extreme Buildouts LLC: coordinated construction, A/C, electrical, plumbing, finish-out, and buildout planning across East Texas.",
+  "internalLinks": [
+    {
+      "taxonomy": "services",
+      "slug": "retail-buildouts",
+      "anchor": "Retail Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "commercial-ac-buildouts",
+      "anchor": "Commercial A/C Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "electrical-buildout-services",
+      "anchor": "Electrical Buildout Services"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "plumbing-buildout-services",
+      "anchor": "Plumbing Buildout Services"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "design-build-construction",
+      "anchor": "Design-Build Construction"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "ground-up-construction",
+      "anchor": "Ground-Up Construction"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "tenant-improvement-buildouts",
+      "anchor": "Tenant Improvement Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "residential-remodeling-additions",
+      "anchor": "Residential Remodeling and Additions"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Scope That Matches The Space",
+      "html": "<p>A commercial renovations scope from Extreme Buildouts LLC starts with the way the space has to operate, not with a generic list of construction tasks. The first review looks at access, existing utilities, walls, ceiling heights, equipment locations, finish expectations, and the schedule pressure around the project. That matters in East Texas, where commercial and residential properties often combine older utility conditions with new equipment demands and tight owner timelines.</p>\n<p>Commercial renovation work often has to respect tenants, customers, inventory, business hours, and neighboring spaces. Extreme Buildouts LLC plans renovation work around access, dust, noise, utility interruptions, and the sequence needed to keep the property usable.</p>\n<p>The work is planned around demolition, wall changes, ceiling work, lighting, A/C modifications, plumbing changes, flooring, paint, trim, doors, hardware, and punch work. When those details are reviewed together, the project has a cleaner path through demolition, rough-in, inspections, finishes, and closeout. Owners get a scope that explains what is included, what needs field verification, and which decisions have to be made before crews start opening walls or ceilings.</p>"
+    },
+    {
+      "heading": "How The Work Is Sequenced",
+      "html": "<p>Strong commercial renovations work is built in the right order. Extreme Buildouts LLC confirms the existing condition, identifies trade conflicts, prices the work in phases when needed, and builds a schedule around the parts of the property that cannot be interrupted. That sequence keeps the job from turning into disconnected trade visits with no clear finish line.</p>\n<p>Mechanical, electrical, plumbing, framing, finish carpentry, fixtures, paint, flooring, and punch items all affect each other. A late change in one area can move inspections, delay finish work, or create visible compromises. The project plan is written so rough work supports finish work, and finish work supports the way the owner needs to use the space.</p>\n<p>For occupied and vacant commercial buildings that need layout changes, trade upgrades, finishes, and operational planning, that coordination is the difference between a buildout that looks complete and one that still has open items after turnover. The goal is not to create a longer process; it is to make the process clear enough that owners know what happens next and crews can keep moving.</p>"
+    },
+    {
+      "heading": "Built For East Texas Conditions",
+      "html": "<p>East Texas construction has its own practical constraints. Heat, humidity, storm windows, long material runs, rural service access, older building stock, and fast-growing commercial corridors can all affect schedule and cost. Extreme Buildouts LLC plans around those realities instead of pricing the work as if every site were a clean new shell.</p>\n<p>If the project is occupied, the plan accounts for dust, noise, utility interruptions, parking, customer access, and end-of-day cleanup. If the project is vacant, the plan focuses on efficient sequence, trade access, and keeping the finish date realistic. Either way, the scope is tied to field conditions rather than assumptions that fall apart once demolition starts.</p>\n<p>The final deliverable is a usable space. That means the A/C works with the layout, electrical service supports the equipment, plumbing is where the fixtures need it, finishes are complete, and the owner is not left managing unresolved trade gaps after the crew leaves.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can renovation work be phased around an active business?",
+      "a": "<p>Yes. Phasing can separate noisy work, utility shutdowns, dust control, and finish work so the business has a workable plan instead of a single disruptive construction window.</p>"
+    },
+    {
+      "q": "What should a renovation scope include?",
+      "a": "<p>A renovation scope should identify demolition, repairs, trade upgrades, finish selections, exclusions, access rules, schedule assumptions, and the condition of existing walls, ceilings, floors, and utilities.</p>"
+    }
+  ]
+}

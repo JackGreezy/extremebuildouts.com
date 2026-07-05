@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://extremebuildouts.com/sitemap.xml
+# AI: https://extremebuildouts.com/llms.txt

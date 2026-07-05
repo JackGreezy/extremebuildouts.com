@@ -1,0 +1,40 @@
+{
+  "services": [
+    "retail-buildouts",
+    "commercial-ac-buildouts",
+    "electrical-buildout-services",
+    "plumbing-buildout-services",
+    "design-build-construction",
+    "ground-up-construction",
+    "commercial-renovations",
+    "tenant-improvement-buildouts",
+    "residential-remodeling-additions",
+    "in-house-mep-coordination"
+  ],
+  "building-types": [
+    "retail-stores-shopping-centers",
+    "restaurants-food-service-spaces",
+    "office-professional-suites",
+    "medical-office-clinics",
+    "warehouses-light-industrial",
+    "custom-homes-residential-renovations",
+    "multi-family-common-areas",
+    "shell-buildings-ground-up"
+  ],
+  "industries": [
+    "property-owners-developers",
+    "franchise-retail-operators",
+    "restaurant-hospitality-operators",
+    "facility-managers",
+    "homeowners-investors",
+    "commercial-landlords"
+  ],
+  "locations": [
+    "east-texas",
+    "tyler-tx",
+    "longview-tx",
+    "marshall-tx",
+    "texarkana-tx",
+    "nacogdoches-tx"
+  ]
+}

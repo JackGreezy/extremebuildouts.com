@@ -1,0 +1,74 @@
+{
+  "slug": "design-build-construction",
+  "taxonomy": "services",
+  "route": "/services/design-build-construction",
+  "name": "Design-Build Construction",
+  "title": "Design-Build Construction | Extreme Buildouts LLC",
+  "metaDescription": "Design-Build Construction from Extreme Buildouts LLC: coordinated construction, A/C, electrical, plumbing, finish-out, and buildout planning across East Texas.",
+  "internalLinks": [
+    {
+      "taxonomy": "services",
+      "slug": "retail-buildouts",
+      "anchor": "Retail Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "commercial-ac-buildouts",
+      "anchor": "Commercial A/C Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "electrical-buildout-services",
+      "anchor": "Electrical Buildout Services"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "plumbing-buildout-services",
+      "anchor": "Plumbing Buildout Services"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "ground-up-construction",
+      "anchor": "Ground-Up Construction"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "commercial-renovations",
+      "anchor": "Commercial Renovations"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "tenant-improvement-buildouts",
+      "anchor": "Tenant Improvement Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "residential-remodeling-additions",
+      "anchor": "Residential Remodeling and Additions"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Scope That Matches The Space",
+      "html": "<p>A design-build construction scope from Extreme Buildouts LLC starts with the way the space has to operate, not with a generic list of construction tasks. The first review looks at access, existing utilities, walls, ceiling heights, equipment locations, finish expectations, and the schedule pressure around the project. That matters in East Texas, where commercial and residential properties often combine older utility conditions with new equipment demands and tight owner timelines.</p>\n<p>Design-build work helps owners avoid a plan that looks good on paper but fails when utilities, equipment, budget, or field conditions are reviewed. Extreme Buildouts LLC uses trade input early so the project can move from concept to construction with fewer surprises.</p>\n<p>The work is planned around scope definition, layout review, trade feasibility, budget alternates, permitting path, schedule planning, material decisions, and field execution. When those details are reviewed together, the project has a cleaner path through demolition, rough-in, inspections, finishes, and closeout. Owners get a scope that explains what is included, what needs field verification, and which decisions have to be made before crews start opening walls or ceilings.</p>"
+    },
+    {
+      "heading": "How The Work Is Sequenced",
+      "html": "<p>Strong design-build construction work is built in the right order. Extreme Buildouts LLC confirms the existing condition, identifies trade conflicts, prices the work in phases when needed, and builds a schedule around the parts of the property that cannot be interrupted. That sequence keeps the job from turning into disconnected trade visits with no clear finish line.</p>\n<p>Mechanical, electrical, plumbing, framing, finish carpentry, fixtures, paint, flooring, and punch items all affect each other. A late change in one area can move inspections, delay finish work, or create visible compromises. The project plan is written so rough work supports finish work, and finish work supports the way the owner needs to use the space.</p>\n<p>For owners who need practical planning, trade input, and construction execution connected from the first site walk, that coordination is the difference between a buildout that looks complete and one that still has open items after turnover. The goal is not to create a longer process; it is to make the process clear enough that owners know what happens next and crews can keep moving.</p>"
+    },
+    {
+      "heading": "Built For East Texas Conditions",
+      "html": "<p>East Texas construction has its own practical constraints. Heat, humidity, storm windows, long material runs, rural service access, older building stock, and fast-growing commercial corridors can all affect schedule and cost. Extreme Buildouts LLC plans around those realities instead of pricing the work as if every site were a clean new shell.</p>\n<p>If the project is occupied, the plan accounts for dust, noise, utility interruptions, parking, customer access, and end-of-day cleanup. If the project is vacant, the plan focuses on efficient sequence, trade access, and keeping the finish date realistic. Either way, the scope is tied to field conditions rather than assumptions that fall apart once demolition starts.</p>\n<p>The final deliverable is a usable space. That means the A/C works with the layout, electrical service supports the equipment, plumbing is where the fixtures need it, finishes are complete, and the owner is not left managing unresolved trade gaps after the crew leaves.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does design-build mean for a small commercial project?",
+      "a": "<p>It means layout, trade planning, budget, schedule, and construction are handled together instead of being passed from one disconnected group to another.</p>"
+    },
+    {
+      "q": "Is design-build useful for renovations?",
+      "a": "<p>Yes. Renovations often have hidden conditions and tight budgets. Early trade review helps decide what can stay, what needs to move, and what should be priced as an alternate before demolition starts.</p>"
+    }
+  ]
+}

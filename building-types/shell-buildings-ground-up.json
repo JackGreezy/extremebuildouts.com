@@ -1,0 +1,78 @@
+{
+  "slug": "shell-buildings-ground-up",
+  "taxonomy": "building-types",
+  "route": "/building-types/shell-buildings-ground-up",
+  "name": "Shell Buildings and Ground-Up Projects",
+  "title": "Shell Buildings and Ground-Up Projects | Extreme Buildouts LLC",
+  "metaDescription": "Shell Buildings and Ground-Up Projects built out by Extreme Buildouts LLC with coordinated construction, A/C, electrical, plumbing, finishes, and turnover planning across East Texas.",
+  "internalLinks": [
+    {
+      "taxonomy": "building-types",
+      "slug": "retail-stores-shopping-centers",
+      "anchor": "Retail Stores and Shopping Centers"
+    },
+    {
+      "taxonomy": "building-types",
+      "slug": "restaurants-food-service-spaces",
+      "anchor": "Restaurants and Food Service Spaces"
+    },
+    {
+      "taxonomy": "building-types",
+      "slug": "office-professional-suites",
+      "anchor": "Office and Professional Suites"
+    },
+    {
+      "taxonomy": "building-types",
+      "slug": "medical-office-clinics",
+      "anchor": "Medical Offices and Clinics"
+    },
+    {
+      "taxonomy": "building-types",
+      "slug": "warehouses-light-industrial",
+      "anchor": "Warehouses and Light Industrial Spaces"
+    },
+    {
+      "taxonomy": "building-types",
+      "slug": "custom-homes-residential-renovations",
+      "anchor": "Custom Homes and Residential Renovations"
+    },
+    {
+      "taxonomy": "building-types",
+      "slug": "multi-family-common-areas",
+      "anchor": "Multi-Family Common Areas"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "retail-buildouts",
+      "anchor": "Retail Buildouts"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Construction Planned Around The Building Type",
+      "html": "<p>Shell Buildings and Ground-Up Projects require a buildout plan that respects how the property will actually be used. Extreme Buildouts LLC reviews the existing structure, utilities, access, finish expectations, inspection path, and schedule before pricing the work. That early review is especially important for site access, utility paths, slab decisions, framing, envelope work, MEP rough-in, interior buildout, and final turnover.</p>\n<p>A project can look simple until the trades start crossing each other. A wall change can affect duct routing. A new sink can affect slab work. A lighting plan can affect ceiling layout. A new piece of equipment can require dedicated power or ventilation. The buildout plan connects those decisions before work starts so the owner has a clearer path to completion.</p>\n<p>For shell buildings and ground-up projects in East Texas, the work often has to account for heat, humidity, storm timing, existing utility conditions, and material availability. The right construction sequence keeps the project moving without hiding details that should be solved before finishes go in.</p>"
+    },
+    {
+      "heading": "Trade Coordination And Finish Control",
+      "html": "<p>Extreme Buildouts LLC coordinates A/C, electrical, plumbing, framing, drywall, doors, trim, fixtures, flooring, paint, and punch work around the owner priority for the space. Some projects need speed. Some need careful phasing. Some need a durable finish more than a decorative one. The scope should reflect those priorities clearly.</p>\n<p>The team looks at rough-in locations, equipment access, service clearances, shutoff locations, attic or ceiling conditions, drain paths, lighting levels, and where future service calls will happen. Those details are easier to solve before walls are closed and finishes are installed.</p>\n<p>The result is a buildout that can be understood by the owner, the field crew, and anyone approving the spend. Clear inclusions, exclusions, allowances, and field-verification items prevent the misunderstandings that usually show up late in a project.</p>"
+    },
+    {
+      "heading": "A Practical Path To Turnover",
+      "html": "<p>Turnover is more than finishing the visible work. The space has to function, pass the necessary inspections, and be ready for the people who will occupy it. For shell buildings and ground-up projects, that means close attention to final device placement, fixture setting, equipment startup, cleanup, and punch work.</p>\n<p>If the property is active, construction is planned around customers, residents, staff, tenants, or inventory. If it is a new or vacant space, the focus shifts to efficient access, material movement, and keeping crews sequenced without avoidable waiting time.</p>\n<p>Extreme Buildouts LLC keeps the conversation grounded in jobsite reality: what is known, what needs to be opened up, what could change the price, and what has to happen before the space is ready. That is the kind of clarity owners need when a project has real money and a real deadline behind it.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What information helps Extreme Buildouts LLC review shell buildings and ground-up projects?",
+      "a": "<p>Photos, the project address or area, desired use of the space, timing, known utility needs, existing plans, landlord rules, and a rough budget range all help the first review. A site walk is still needed before final scope and pricing.</p>"
+    },
+    {
+      "q": "Can A/C, electrical, and plumbing be included with shell buildings and ground-up projects?",
+      "a": "<p>Yes. Extreme Buildouts LLC coordinates A/C, electrical, plumbing, and construction work together so the project is not split into disconnected trade scopes.</p>"
+    },
+    {
+      "q": "How are unknown conditions handled on shell buildings and ground-up projects?",
+      "a": "<p>Unknown conditions are identified as field-verification items before work starts. If demolition or utility review reveals something different, the scope can be adjusted with the owner before finish work hides the issue.</p>"
+    }
+  ]
+}

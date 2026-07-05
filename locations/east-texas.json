@@ -1,0 +1,78 @@
+{
+  "slug": "east-texas",
+  "taxonomy": "locations",
+  "route": "/locations/east-texas",
+  "name": "East Texas",
+  "title": "East Texas | Extreme Buildouts LLC",
+  "metaDescription": "Extreme Buildouts LLC serves East Texas with commercial and residential construction, retail buildouts, A/C, electrical, plumbing, and design-build work.",
+  "internalLinks": [
+    {
+      "taxonomy": "locations",
+      "slug": "tyler-tx",
+      "anchor": "Tyler, TX"
+    },
+    {
+      "taxonomy": "locations",
+      "slug": "longview-tx",
+      "anchor": "Longview, TX"
+    },
+    {
+      "taxonomy": "locations",
+      "slug": "marshall-tx",
+      "anchor": "Marshall, TX"
+    },
+    {
+      "taxonomy": "locations",
+      "slug": "texarkana-tx",
+      "anchor": "Texarkana, TX"
+    },
+    {
+      "taxonomy": "locations",
+      "slug": "nacogdoches-tx",
+      "anchor": "Nacogdoches, TX"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "retail-buildouts",
+      "anchor": "Retail Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "commercial-ac-buildouts",
+      "anchor": "Commercial A/C Buildouts"
+    },
+    {
+      "taxonomy": "services",
+      "slug": "electrical-buildout-services",
+      "anchor": "Electrical Buildout Services"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Buildout Work In East Texas",
+      "html": "<p>Extreme Buildouts LLC serves East Texas with commercial and residential construction, retail buildouts, A/C, electrical, plumbing, design-build planning, renovations, and ground-up work. Projects in this area are shaped by humid weather, storm seasons, clay soil movement, long drive times between communities, and a mix of retail, residential, and light commercial properties, so the construction plan has to be practical from the first site walk.</p>\n<p>The first review looks at access, utilities, existing conditions, schedule pressure, finish expectations, and the point where the owner needs the space to be usable. That creates a better scope than pricing only the visible work and discovering the trade conflicts later.</p>\n<p>For East Texas owners, the value is coordination. A/C, electrical, plumbing, framing, finishes, and punch work are planned together so the project has one path from rough-in through closeout.</p>"
+    },
+    {
+      "heading": "Commercial And Residential Scope Control",
+      "html": "<p>Commercial work in East Texas often depends on opening dates, landlord rules, tenant coordination, equipment needs, and inspections. Residential work often depends on access, dust control, utility interruptions, and keeping the home functional while work is underway. Extreme Buildouts LLC plans those details before crews arrive.</p>\n<p>Retail suites, offices, restaurants, homes, and light commercial spaces each need a different sequence. Some require heavy rough-in before finishes. Some require careful phasing around occupants. Some need early decisions on equipment, fixtures, and lighting so the rest of the work can move cleanly.</p>\n<p>The scope is written to keep owner decisions visible: what is included, what is excluded, what needs field verification, and what could change after demolition or utility review. That helps the project move without burying important details in vague language.</p>"
+    },
+    {
+      "heading": "East Texas Field Conditions",
+      "html": "<p>East Texas work has to account for heat, humidity, storm timing, soil movement, older structures, rural access, and long material runs. In East Texas, those details can affect everything from scheduling to A/C performance to how plumbing and electrical work are routed through an existing building.</p>\n<p>Extreme Buildouts LLC keeps the project grounded in field conditions. If the existing building needs correction before finish work, that gets documented. If the schedule depends on a permit, inspection, special material, or equipment delivery, that gets called out before the owner commits to a finish date.</p>\n<p>The end goal is simple: a finished space that works. Comfortable air, reliable electrical, working plumbing, clean finishes, and a closeout process that leaves the owner with a usable commercial or residential property.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What information helps Extreme Buildouts LLC review work in East Texas?",
+      "a": "<p>Photos, the project address or area, desired use of the space, timing, known utility needs, existing plans, landlord rules, and a rough budget range all help the first review. A site walk is still needed before final scope and pricing.</p>"
+    },
+    {
+      "q": "Can A/C, electrical, and plumbing be included with work in East Texas?",
+      "a": "<p>Yes. Extreme Buildouts LLC coordinates A/C, electrical, plumbing, and construction work together so the project is not split into disconnected trade scopes.</p>"
+    },
+    {
+      "q": "How are unknown conditions handled on work in East Texas?",
+      "a": "<p>Unknown conditions are identified as field-verification items before work starts. If demolition or utility review reveals something different, the scope can be adjusted with the owner before finish work hides the issue.</p>"
+    }
+  ]
+}

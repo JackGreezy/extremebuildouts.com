@@ -1,0 +1,45 @@
+{
+  "domain": "extremebuildouts.com",
+  "clone_dir": "/Users/jackgreenberg/Desktop/rank-and-rent/David/clones/extremebuildouts.com",
+  "content_dir": "/Users/jackgreenberg/Desktop/rank-and-rent/David/clones/extremebuildouts.com",
+  "reference": "https://www.webcor.com/",
+  "refhost": "webcor-com",
+  "biz": "Extreme Buildouts LLC",
+  "wordmark_l1": "Extreme",
+  "wordmark_l2": "Buildouts LLC",
+  "city": "East Texas",
+  "region": "East Texas",
+  "phone": "",
+  "email": "hello@extremebuildouts.com",
+  "hero_image": "/ours/building-types/retail-stores-shopping-centers.jpg",
+  "nav": [
+    [
+      "Services",
+      "/services"
+    ],
+    [
+      "Project Types",
+      "/building-types"
+    ],
+    [
+      "Industries",
+      "/industries"
+    ],
+    [
+      "Service Areas",
+      "/locations"
+    ],
+    [
+      "About",
+      "/about"
+    ],
+    [
+      "Contact",
+      "/contact"
+    ]
+  ],
+  "cta": [
+    "Request a Buildout Review",
+    "/contact"
+  ]
+}
