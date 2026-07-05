@@ -36,6 +36,7 @@ cp -R "$PROJ/public/images/." "$PROJ/public/ours/"
 
 python3 "$S/relabel_engine.py" --config "$CFG" --map "$MAP" --voice "$VOICE"
 rm -rf "$PROJ/public/assets-f/img" "$PROJ/public/assets-f/js"
+python3 "$PROJ/scripts/add-project-gallery.py"
 python3 "$S/verify_site.py" "$PROJ" --map "$MAP" --json "$PROJ/qa-out/verify.json"
 node "$S/qa_shots.mjs" "$PROJ" --port 4798
 

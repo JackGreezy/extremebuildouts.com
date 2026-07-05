@@ -1,0 +1,231 @@
+[
+  {
+    "type": "chat-image",
+    "src": "/ours/projects/example-mechanical-room-01-mechanical-piping-controls.jpg",
+    "label": "Mechanical Piping Controls",
+    "filename": "example-mechanical-room-01-mechanical-piping-controls.jpg"
+  },
+  {
+    "type": "chat-image",
+    "src": "/ours/projects/example-mechanical-room-02-mechanical-room-pipe-runs.jpg",
+    "label": "Mechanical Room Pipe Runs",
+    "filename": "example-mechanical-room-02-mechanical-room-pipe-runs.jpg"
+  },
+  {
+    "type": "chat-image",
+    "src": "/ours/projects/example-mechanical-room-03-overhead-mechanical-piping.jpg",
+    "label": "Overhead Mechanical Piping",
+    "filename": "example-mechanical-room-03-overhead-mechanical-piping.jpg"
+  },
+  {
+    "type": "chat-image",
+    "src": "/ours/projects/example-mechanical-room-04-mechanical-infrastructure-wide.jpg",
+    "label": "Mechanical Infrastructure Wide",
+    "filename": "example-mechanical-room-04-mechanical-infrastructure-wide.jpg"
+  },
+  {
+    "type": "chat-image",
+    "src": "/ours/projects/example-mechanical-room-05-equipment-room-tank-installation.jpg",
+    "label": "Equipment Room Tank Installation",
+    "filename": "example-mechanical-room-05-equipment-room-tank-installation.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-01-20200721-201901.jpg",
+    "label": "20200721 201901",
+    "filename": "field-project-photo-01-20200721-201901.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-02-20200224-141155.jpg",
+    "label": "20200224 141155",
+    "filename": "field-project-photo-02-20200224-141155.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-03-20240923-200528.jpg",
+    "label": "20240923 200528",
+    "filename": "field-project-photo-03-20240923-200528.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-04-20190522-155129.jpg",
+    "label": "20190522 155129",
+    "filename": "field-project-photo-04-20190522-155129.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-05-20240923-200456.jpg",
+    "label": "20240923 200456",
+    "filename": "field-project-photo-05-20240923-200456.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-06-20200227-190754.jpg",
+    "label": "20200227 190754",
+    "filename": "field-project-photo-06-20200227-190754.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-07-20230511-075937.jpg",
+    "label": "20230511 075937",
+    "filename": "field-project-photo-07-20230511-075937.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-08-20200224-141130.jpg",
+    "label": "20200224 141130",
+    "filename": "field-project-photo-08-20200224-141130.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-09-20240923-200509.jpg",
+    "label": "20240923 200509",
+    "filename": "field-project-photo-09-20240923-200509.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-10-20180608-153855.jpg",
+    "label": "20180608 153855",
+    "filename": "field-project-photo-10-20180608-153855.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-11-20190117-063416.jpg",
+    "label": "20190117 063416",
+    "filename": "field-project-photo-11-20190117-063416.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-12-20180608-153838.jpg",
+    "label": "20180608 153838",
+    "filename": "field-project-photo-12-20180608-153838.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-13-20180615-070716.jpg",
+    "label": "20180615 070716",
+    "filename": "field-project-photo-13-20180615-070716.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-14-20190130-104135.jpg",
+    "label": "20190130 104135",
+    "filename": "field-project-photo-14-20190130-104135.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-15-20180521-083322.jpg",
+    "label": "20180521 083322",
+    "filename": "field-project-photo-15-20180521-083322.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-16-20180531-132253.jpg",
+    "label": "20180531 132253",
+    "filename": "field-project-photo-16-20180531-132253.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-17-20181202-072557.jpg",
+    "label": "20181202 072557",
+    "filename": "field-project-photo-17-20181202-072557.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-18-20190117-063400.jpg",
+    "label": "20190117 063400",
+    "filename": "field-project-photo-18-20190117-063400.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-19-20181221-090053.jpg",
+    "label": "20181221 090053",
+    "filename": "field-project-photo-19-20181221-090053.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-20-20180521-083558.jpg",
+    "label": "20180521 083558",
+    "filename": "field-project-photo-20-20180521-083558.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-21-20180605-144029.jpg",
+    "label": "20180605 144029",
+    "filename": "field-project-photo-21-20180605-144029.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-22-20190104-135351.jpg",
+    "label": "20190104 135351",
+    "filename": "field-project-photo-22-20190104-135351.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-23-20181114-140036.jpg",
+    "label": "20181114 140036",
+    "filename": "field-project-photo-23-20181114-140036.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-24-20190104-140151.jpg",
+    "label": "20190104 140151",
+    "filename": "field-project-photo-24-20190104-140151.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-25-20180521-134141.jpg",
+    "label": "20180521 134141",
+    "filename": "field-project-photo-25-20180521-134141.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-26-20181221-075832.jpg",
+    "label": "20181221 075832",
+    "filename": "field-project-photo-26-20181221-075832.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-27-20160616-093322.jpg",
+    "label": "20160616 093322",
+    "filename": "field-project-photo-27-20160616-093322.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-28-20180411-143626.jpg",
+    "label": "20180411 143626",
+    "filename": "field-project-photo-28-20180411-143626.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-29-20181126-115406.jpg",
+    "label": "20181126 115406",
+    "filename": "field-project-photo-29-20181126-115406.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-30-20181202-082201.jpg",
+    "label": "20181202 082201",
+    "filename": "field-project-photo-30-20181202-082201.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-31-20181221-080142.jpg",
+    "label": "20181221 080142",
+    "filename": "field-project-photo-31-20181221-080142.jpg"
+  },
+  {
+    "type": "email-image",
+    "src": "/ours/projects/field-project-photo-32-20181119-075237.jpg",
+    "label": "20181119 075237",
+    "filename": "field-project-photo-32-20181119-075237.jpg"
+  },
+  {
+    "type": "video",
+    "src": "/ours/projects/field-project-video-01-20181228-102045.mp4",
+    "label": "20181228 102045",
+    "filename": "field-project-video-01-20181228-102045.mp4",
+    "poster": "/ours/projects/field-project-video-01-20181228-102045-poster.jpg"
+  }
+]
