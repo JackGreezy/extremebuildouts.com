@@ -81,19 +81,40 @@ PROJECT_CSS = """
 <style id="rr-project-gallery-css">
 .rr-project-teaser{background:#fff}
 .rr-project-eyebrow{color:#009b67!important;text-transform:uppercase!important;letter-spacing:.12em!important;font-weight:800!important}
-.rr-project-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:34px 0}
-.rr-project-index-card{display:block!important;background:#fff!important;border:1px solid rgba(69,85,102,.18)!important;text-decoration:none!important;color:inherit!important;box-shadow:0 10px 28px rgba(20,34,48,.07)!important}
-.rr-project-index-card img{display:block!important;width:100%!important;height:320px!important;object-fit:cover!important}
-.rr-project-index-card .filter-cards{padding:24px!important}
-.rr-project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0 34px}
-.rr-project-gallery figure{margin:0;background:#fff;border:1px solid rgba(69,85,102,.18);box-shadow:0 8px 22px rgba(20,34,48,.06)}
-.rr-project-gallery img{display:block;width:100%;height:250px;object-fit:cover}
-.rr-project-gallery figcaption{padding:12px 14px;font-weight:700;color:#455666;line-height:1.3}
-.rr-project-gallery.rr-field-gallery img{height:190px}
-.rr-project-video{margin:24px 0 36px;background:#111}
-.rr-project-video video{display:block;width:100%;max-height:620px;background:#111}
-.rr-project-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 28px}
-.rr-project-metrics div{border:1px solid rgba(69,85,102,.18);padding:16px 18px;background:#fff}
+.rr-project-index{max-width:1180px;margin:0 auto}
+.rr-project-index h1,.rr-project-page h1{max-width:980px}
+.rr-project-index>p,.rr-project-lede{max-width:880px!important;color:#455666!important}
+.rr-project-index-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:34px 0 22px}
+.rr-project-index-card{display:flex!important;min-height:100%;flex-direction:column;background:#fff!important;border:1px solid rgba(69,85,102,.18)!important;text-decoration:none!important;color:inherit!important;box-shadow:0 10px 28px rgba(20,34,48,.07)!important;overflow:hidden}
+.rr-project-index-card img{display:block!important;width:100%!important;aspect-ratio:4/3!important;height:auto!important;object-fit:cover!important;transition:transform .22s ease}
+.rr-project-index-card:hover img{transform:scale(1.035)}
+.rr-project-card-copy{display:flex!important;min-height:160px!important;flex-direction:column!important;justify-content:space-between!important;padding:22px!important}
+.rr-project-card-title{margin:0!important;color:#101820!important;font-size:20px!important;line-height:1.12!important;letter-spacing:0!important;text-transform:none!important}
+.rr-project-card-text{margin:12px 0 0!important;font-size:15px!important;line-height:1.42!important;color:#455666!important;letter-spacing:0!important;text-transform:none!important}
+.rr-project-index-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:22px 0 0}
+.rr-project-index-strip img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.rr-project-page{max-width:1220px;margin:0 auto}
+.rr-project-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:34px;align-items:end;margin-bottom:34px}
+.rr-project-hero-media{background:#101820;border:1px solid rgba(69,85,102,.18);box-shadow:0 16px 34px rgba(20,34,48,.12)}
+.rr-project-hero-media img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
+.rr-project-section{margin:44px 0}
+.rr-project-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+.rr-project-section-heading h2{margin-bottom:0!important}
+.rr-project-section-heading p{max-width:540px!important;margin:0!important;color:#455666!important}
+.rr-project-gallery{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin:18px 0 0}
+.rr-project-gallery figure{position:relative;grid-column:span 4;margin:0;background:#101820;border:1px solid rgba(69,85,102,.18);box-shadow:0 8px 22px rgba(20,34,48,.06);overflow:hidden}
+.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6){grid-column:span 6}
+.rr-project-gallery img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover}
+.rr-project-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(180deg,rgba(16,24,32,0),rgba(16,24,32,.82));font-weight:800;color:#fff;line-height:1.24;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.rr-project-gallery.rr-field-gallery figure{grid-column:span 3}
+.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6){grid-column:span 6}
+.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 4}
+.rr-project-gallery.rr-field-gallery img{aspect-ratio:1/1}
+.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1) img,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6) img{aspect-ratio:16/9}
+.rr-project-video{margin:18px 0 0;background:#111;border:1px solid rgba(69,85,102,.22);box-shadow:0 14px 32px rgba(20,34,48,.12)}
+.rr-project-video video{display:block;width:100%;max-height:680px;background:#111}
+.rr-project-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0 10px}
+.rr-project-metrics div{border:1px solid rgba(69,85,102,.18);padding:18px 20px;background:#fff}
 .rr-project-metrics strong{display:block;color:#009b67;font-size:24px;line-height:1}
 .rr-project-metrics span{display:block;margin-top:6px;font-weight:700;color:#455666}
 .rr-taxonomy-intro{max-width:1120px;margin:10px 0 32px}
@@ -103,7 +124,8 @@ PROJECT_CSS = """
 .rr-taxonomy-card-grid div{border:1px solid rgba(69,85,102,.18);background:#fff;padding:18px 20px;box-shadow:0 8px 22px rgba(20,34,48,.05)}
 .rr-taxonomy-card-grid strong{display:block;color:#009b67;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
 .rr-taxonomy-card-grid span{display:block;color:#455666;font-weight:700;line-height:1.35}
-@media(max-width:800px){.rr-project-index-grid,.rr-project-gallery,.rr-project-metrics{grid-template-columns:1fr}.rr-project-index-card img,.rr-project-gallery img,.rr-project-gallery.rr-field-gallery img{height:auto}.rr-project-video video{max-height:none}}
+@media(max-width:1100px){.rr-project-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 6}.rr-project-hero-grid{grid-template-columns:1fr}}
+@media(max-width:800px){.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}}
 @media(max-width:800px){.rr-taxonomy-card-grid{grid-template-columns:1fr}}
 </style>
 """
@@ -153,8 +175,11 @@ def add_projects_nav(soup):
             about.insert_before(link)
 
 
-def gallery(items, captions, extra_class=""):
-    out = [f'<div class="rr-project-gallery {extra_class}">']
+def gallery(items, captions, extra_class="", gallery_id=None):
+    attrs = f' class="rr-project-gallery {extra_class}"'
+    if gallery_id:
+        attrs += f' id="{html.escape(gallery_id, quote=True)}"'
+    out = [f"<div{attrs}>"]
     for i, item in enumerate(items):
         caption = captions[i % len(captions)]
         out.append(
@@ -190,27 +215,32 @@ def project_body(media):
     if video:
         poster = video.get("poster", featured[0]["src"] if featured else "")
         video_html = (
-            '<h2>Walkthrough Video</h2>'
-            '<p>Short field video from the same project media set, included so owners can see the kind of above-ceiling and equipment-room coordination that happens before a finished space is turned over.</p>'
-            f'<div class="rr-project-video"><video controls preload="metadata" poster="{html.escape(poster, quote=True)}">'
+            '<section class="rr-project-section" id="walkthrough-video">'
+            '<div class="rr-project-section-heading"><h2>Field Walkthrough</h2>'
+            '<p>Active buildout conditions, overhead coordination, equipment access, and rough-in sequencing from the jobsite.</p></div>'
+            f'<div class="rr-project-video"><video controls muted playsinline preload="metadata" poster="{html.escape(poster, quote=True)}">'
             f'<source src="{html.escape(video["src"], quote=True)}" type="video/mp4"/>'
-            "</video></div>"
+            "</video></div></section>"
         )
     return (
-        '<h2>Mechanical Room Buildout Example</h2>'
-        '<p>This example project shows the kind of field work Extreme Buildouts LLC coordinates when a commercial space needs A/C, plumbing, electrical, mechanical equipment, pipe routing, access, and finish planning handled together. The photos are jobsite examples, not stock images, and they show the practical details that decide whether a buildout works after turnover.</p>'
-        '<p>The visible work includes overhead pipe runs, insulated mechanical lines, control panels, valves, meters, equipment pads, tank areas, service clearances, and utility routing. Those details have to be planned before ceilings close, finishes start, or the owner is left managing conflicts between trades.</p>'
+        '<div class="rr-project-hero-grid"><div><h6>Example Project</h6><h1>Commercial Mechanical Room Buildout</h1>'
+        '<p class="rr-project-lede">Real jobsite photos from a commercial mechanical room buildout with A/C, plumbing, electrical, controls, overhead pipe runs, equipment areas, and field coordination tied into one working scope.</p>'
         '<div class="rr-project-metrics"><div><strong>MEP</strong><span>A/C, plumbing, electrical, and controls</span></div><div><strong>Field</strong><span>Real project photos from active work</span></div><div><strong>Scope</strong><span>Mechanical room and utility coordination</span></div></div>'
-        '<h2>Primary Project Photos</h2>'
+        '</div><div class="rr-project-hero-media">'
+        f'<img src="{html.escape(featured[0]["src"], quote=True)}" alt="{html.escape(DETAIL_TITLE, quote=True)}"/>'
+        '</div></div>'
+        '<section class="rr-project-section" id="primary-gallery"><div class="rr-project-section-heading"><h2>Primary Mechanical Photos</h2>'
+        '<p>Controls, valves, metering, insulated pipe runs, service clearances, equipment staging, and utility routing from the same project.</p></div>'
         + gallery(featured, featured_captions)
+        + '</section>'
         + video_html
-        + '<h2>Additional Field Examples</h2>'
-        '<p>The additional photos from the project emails show more commercial buildout conditions: ductwork, ceiling utilities, structural openings, rooftop equipment, rough-in work, lifts, equipment staging, and field coordination before finishes are complete.</p>'
+        + '<section class="rr-project-section" id="field-gallery"><div class="rr-project-section-heading"><h2>Additional Field Examples</h2>'
+        '<p>Ductwork, ceiling utilities, structural openings, rooftop equipment, rough-in work, lifts, equipment staging, and active commercial buildout conditions.</p></div>'
         + gallery(field, field_captions, "rr-field-gallery")
-        + '<h2>What This Shows Owners</h2>'
+        + '</section><section class="rr-project-section"><h2>What This Shows Owners</h2>'
         '<p>Commercial buildouts are not just finish work. The finished space depends on what happens in mechanical rooms, above ceilings, behind walls, on rooftops, and around equipment clearances. Extreme Buildouts LLC uses that field reality to plan scopes before the project turns into disconnected trade visits.</p>'
         '<p>If a space needs A/C, electrical, plumbing, structural coordination, interior finish work, or ground-up planning, this is the kind of detail that should be reviewed early. The goal is a space that opens cleanly, works correctly, and does not leave the owner chasing unresolved trade gaps after construction.</p>'
-        '<h2>Ready to plan the scope?</h2><a class="button underlined-text w-button" href="/contact">Request a Buildout Review</a>'
+        '<h2>Ready to plan the scope?</h2><a class="button underlined-text w-button" href="/contact">Request a Buildout Review</a></section>'
     )
 
 
@@ -218,23 +248,14 @@ def build_project_detail(media):
     base = read_soup(PUBLIC / "services/commercial-ac-buildouts.html")
     ensure_project_css(base)
     set_meta(base, DETAIL_TITLE, DESCRIPTION, DETAIL_ROUTE)
-    for h in base.find_all("h1"):
-        set_text(h, DETAIL_TITLE)
-    rich = base.select_one(".paragraph.projects.w-richtext")
-    if rich is not None:
-        rich.clear()
-        rich.append(soupify(project_body(media)))
-    hero = None
-    for col in base.select("section.padding > div.float-left"):
-        if "projects-left-column" not in (col.get("class") or []):
-            hero = col.find("img")
-            break
-    featured = next((m for m in media if m["type"] == "chat-image"), None)
-    if hero is not None and featured is not None:
-        hero["src"] = featured["src"]
-        hero["alt"] = DETAIL_TITLE
-        for attr in ("srcset", "data-src", "data-srcset"):
-            hero.attrs.pop(attr, None)
+    old = base.select_one("section.padding")
+    section = soupify(
+        f'<section class="padding rr-project-page"><div class="rr-project-detail">{project_body(media)}</div></section>'
+    )
+    if old is not None:
+        old.replace_with(section)
+    elif base.body is not None:
+        base.body.insert(1, section)
     add_projects_nav(base)
     write_soup(PUBLIC / "projects/mechanical-room-buildout.html", base)
 
@@ -244,30 +265,47 @@ def build_projects_index(media):
     ensure_project_css(base)
     set_meta(base, INDEX_TITLE, "Example project photos and videos from Extreme Buildouts LLC.", INDEX_ROUTE)
     main = base.select_one("body > .padding")
-    featured = next((m for m in media if m["type"] == "chat-image"), None)
+    featured_images = [m for m in media if m["type"] == "chat-image"]
+    featured = featured_images[0]
     email_images = [m for m in media if m["type"] == "email-image"]
+    video = next((m for m in media if m["type"] == "video"), None)
     field = next((m for m in email_images if m["filename"].startswith("field-project-photo-22-")), None)
     field = field or next((m for m in email_images if m["filename"].startswith("field-project-photo-13-")), None)
     field = field or next(iter(email_images), featured)
+    strip_items = featured_images[:3] + email_images[:3]
+    strip = "".join(
+        f'<img loading="lazy" src="{html.escape(item["src"], quote=True)}" alt="{html.escape(item["label"], quote=True)}"/>'
+        for item in strip_items
+    )
+    video_poster = (video or {}).get("poster", featured["src"])
     if main is not None:
         main.clear()
         main.append(soupify(f"""
-<div class="w-form rr-project-index">
+<div class="rr-project-index">
   <div class="filter-reset-padding">
     <div class="w-clearfix"><div><h6>Example Projects</h6></div></div>
   </div>
   <h1>Example Projects</h1>
   <p>Real project photos and videos from Extreme Buildouts LLC field work, including mechanical rooms, overhead utilities, equipment areas, ductwork, and rough-in coordination.</p>
   <div class="rr-project-index-grid">
-    <a class="rr-project-index-card project-card w-inline-block" href="{DETAIL_ROUTE}">
+    <a class="rr-project-index-card w-inline-block" href="{DETAIL_ROUTE}">
       <img class="image-29" src="{featured['src']}" alt="{DETAIL_TITLE}"/>
-      <div class="filter-cards"><h6 class="project-name">{DETAIL_TITLE}</h6><h5 class="project-card-location">Mechanical room piping, A/C coordination, plumbing, equipment, controls, and field buildout photos.</h5></div>
+      <div class="rr-project-card-copy"><h2 class="rr-project-card-title">{DETAIL_TITLE}</h2><p class="rr-project-card-text">Mechanical room piping, A/C coordination, plumbing, equipment, controls, and field buildout photos.</p></div>
     </a>
-    <a class="rr-project-index-card project-card w-inline-block" href="{DETAIL_ROUTE}#field-gallery">
+    <a class="rr-project-index-card w-inline-block" href="{DETAIL_ROUTE}#primary-gallery">
+      <img class="image-29" src="{featured_images[2]['src']}" alt="Primary mechanical photos"/>
+      <div class="rr-project-card-copy"><h2 class="rr-project-card-title">Primary Mechanical Photos</h2><p class="rr-project-card-text">Controls, pipe routing, equipment access, metering, valves, and service clearances from active work.</p></div>
+    </a>
+    <a class="rr-project-index-card w-inline-block" href="{DETAIL_ROUTE}#walkthrough-video">
+      <img class="image-29" src="{video_poster}" alt="Field walkthrough video"/>
+      <div class="rr-project-card-copy"><h2 class="rr-project-card-title">Field Walkthrough</h2><p class="rr-project-card-text">Active buildout conditions, overhead coordination, equipment access, and rough-in sequencing from the jobsite.</p></div>
+    </a>
+    <a class="rr-project-index-card w-inline-block" href="{DETAIL_ROUTE}#field-gallery">
       <img class="image-29" src="{field['src']}" alt="Additional field project examples"/>
-      <div class="filter-cards"><h6 class="project-name">Additional Field Project Examples</h6><h5 class="project-card-location">Ductwork, overhead utilities, equipment staging, rooftop work, rough-in, and active commercial buildout conditions.</h5></div>
+      <div class="rr-project-card-copy"><h2 class="rr-project-card-title">Additional Field Project Examples</h2><p class="rr-project-card-text">Ductwork, overhead utilities, equipment staging, rooftop work, rough-in, and active commercial buildout conditions.</p></div>
     </a>
   </div>
+  <div class="rr-project-index-strip">{strip}</div>
 </div>
 """))
     add_projects_nav(base)

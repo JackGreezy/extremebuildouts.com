@@ -305,19 +305,40 @@ body.rr-nav-open .rr-scrim{opacity:1;visibility:visible}
 <style id="rr-project-gallery-css">
 .rr-project-teaser{background:#fff}
 .rr-project-eyebrow{color:#009b67!important;text-transform:uppercase!important;letter-spacing:.12em!important;font-weight:800!important}
-.rr-project-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:34px 0}
-.rr-project-index-card{display:block!important;background:#fff!important;border:1px solid rgba(69,85,102,.18)!important;text-decoration:none!important;color:inherit!important;box-shadow:0 10px 28px rgba(20,34,48,.07)!important}
-.rr-project-index-card img{display:block!important;width:100%!important;height:320px!important;object-fit:cover!important}
-.rr-project-index-card .filter-cards{padding:24px!important}
-.rr-project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0 34px}
-.rr-project-gallery figure{margin:0;background:#fff;border:1px solid rgba(69,85,102,.18);box-shadow:0 8px 22px rgba(20,34,48,.06)}
-.rr-project-gallery img{display:block;width:100%;height:250px;object-fit:cover}
-.rr-project-gallery figcaption{padding:12px 14px;font-weight:700;color:#455666;line-height:1.3}
-.rr-project-gallery.rr-field-gallery img{height:190px}
-.rr-project-video{margin:24px 0 36px;background:#111}
-.rr-project-video video{display:block;width:100%;max-height:620px;background:#111}
-.rr-project-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 28px}
-.rr-project-metrics div{border:1px solid rgba(69,85,102,.18);padding:16px 18px;background:#fff}
+.rr-project-index{max-width:1180px;margin:0 auto}
+.rr-project-index h1,.rr-project-page h1{max-width:980px}
+.rr-project-index>p,.rr-project-lede{max-width:880px!important;color:#455666!important}
+.rr-project-index-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:34px 0 22px}
+.rr-project-index-card{display:flex!important;min-height:100%;flex-direction:column;background:#fff!important;border:1px solid rgba(69,85,102,.18)!important;text-decoration:none!important;color:inherit!important;box-shadow:0 10px 28px rgba(20,34,48,.07)!important;overflow:hidden}
+.rr-project-index-card img{display:block!important;width:100%!important;aspect-ratio:4/3!important;height:auto!important;object-fit:cover!important;transition:transform .22s ease}
+.rr-project-index-card:hover img{transform:scale(1.035)}
+.rr-project-card-copy{display:flex!important;min-height:160px!important;flex-direction:column!important;justify-content:space-between!important;padding:22px!important}
+.rr-project-card-title{margin:0!important;color:#101820!important;font-size:20px!important;line-height:1.12!important;letter-spacing:0!important;text-transform:none!important}
+.rr-project-card-text{margin:12px 0 0!important;font-size:15px!important;line-height:1.42!important;color:#455666!important;letter-spacing:0!important;text-transform:none!important}
+.rr-project-index-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:22px 0 0}
+.rr-project-index-strip img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.rr-project-page{max-width:1220px;margin:0 auto}
+.rr-project-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:34px;align-items:end;margin-bottom:34px}
+.rr-project-hero-media{background:#101820;border:1px solid rgba(69,85,102,.18);box-shadow:0 16px 34px rgba(20,34,48,.12)}
+.rr-project-hero-media img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
+.rr-project-section{margin:44px 0}
+.rr-project-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+.rr-project-section-heading h2{margin-bottom:0!important}
+.rr-project-section-heading p{max-width:540px!important;margin:0!important;color:#455666!important}
+.rr-project-gallery{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin:18px 0 0}
+.rr-project-gallery figure{position:relative;grid-column:span 4;margin:0;background:#101820;border:1px solid rgba(69,85,102,.18);box-shadow:0 8px 22px rgba(20,34,48,.06);overflow:hidden}
+.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6){grid-column:span 6}
+.rr-project-gallery img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover}
+.rr-project-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(180deg,rgba(16,24,32,0),rgba(16,24,32,.82));font-weight:800;color:#fff;line-height:1.24;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.rr-project-gallery.rr-field-gallery figure{grid-column:span 3}
+.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6){grid-column:span 6}
+.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 4}
+.rr-project-gallery.rr-field-gallery img{aspect-ratio:1/1}
+.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1) img,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6) img{aspect-ratio:16/9}
+.rr-project-video{margin:18px 0 0;background:#111;border:1px solid rgba(69,85,102,.22);box-shadow:0 14px 32px rgba(20,34,48,.12)}
+.rr-project-video video{display:block;width:100%;max-height:680px;background:#111}
+.rr-project-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0 10px}
+.rr-project-metrics div{border:1px solid rgba(69,85,102,.18);padding:18px 20px;background:#fff}
 .rr-project-metrics strong{display:block;color:#009b67;font-size:24px;line-height:1}
 .rr-project-metrics span{display:block;margin-top:6px;font-weight:700;color:#455666}
 .rr-taxonomy-intro{max-width:1120px;margin:10px 0 32px}
@@ -327,7 +348,8 @@ body.rr-nav-open .rr-scrim{opacity:1;visibility:visible}
 .rr-taxonomy-card-grid div{border:1px solid rgba(69,85,102,.18);background:#fff;padding:18px 20px;box-shadow:0 8px 22px rgba(20,34,48,.05)}
 .rr-taxonomy-card-grid strong{display:block;color:#009b67;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
 .rr-taxonomy-card-grid span{display:block;color:#455666;font-weight:700;line-height:1.35}
-@media(max-width:800px){.rr-project-index-grid,.rr-project-gallery,.rr-project-metrics{grid-template-columns:1fr}.rr-project-index-card img,.rr-project-gallery img,.rr-project-gallery.rr-field-gallery img{height:auto}.rr-project-video video{max-height:none}}
+@media(max-width:1100px){.rr-project-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 6}.rr-project-hero-grid{grid-template-columns:1fr}}
+@media(max-width:800px){.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}}
 @media(max-width:800px){.rr-taxonomy-card-grid{grid-template-columns:1fr}}
 </style>
 </head><body><header class="navigation-top-simple w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container w-container"><a class="refresh-logo w-nav-brand rr-wordmark" href="/"><span class="rr-wm-1">Extreme</span><span class="rr-wm-2">Buildouts LLC</span></a><nav class="nav-menu-2 w-nav-menu" role="navigation"><div class="w-dropdown" data-delay="0" data-hover="false"><a class="refresh-navlinks top w-dropdown-toggle" href="/services">Services</a></div><div class="w-dropdown" data-delay="0" data-hover="false"><a class="refresh-navlinks top w-dropdown-toggle" href="/building-types">Project Types</a></div><div class="w-dropdown" data-delay="0" data-hover="false"><a class="refresh-navlinks top w-dropdown-toggle" href="/industries">Industries</a></div><div class="w-dropdown" data-delay="0" data-hover="false"><a class="refresh-navlinks top w-dropdown-toggle" href="/locations">Service Areas</a></div><div class="w-dropdown" data-delay="0" data-hover="false"><a class="refresh-navlinks top w-dropdown-toggle" href="/projects">Projects</a><a class="refresh-navlinks top w-dropdown-toggle" href="/about">About</a><a class="refresh-navlinks top w-dropdown-toggle" href="/contact">Contact</a></div></nav><button aria-label="Menu" class="rr-burger"><span></span><span></span><span></span></button></div></header><div class="padding"><div class="w-form"><form data-name="Email Form" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e" data-wf-element-id="8221f674-2453-f5b4-48fa-500db93a340f" data-wf-page-id="650880721ca75e8ba886a9e7" fs-cmsfilter-element="filters" id="email-form" method="get" name="email-form"><div><div class="filter-reset-padding"><div class="w-clearfix"><div><h6>Project Types</h6></div></div></div>
