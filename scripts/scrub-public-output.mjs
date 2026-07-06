@@ -20,6 +20,15 @@ const donorRe = new RegExp(donorName, 'gi');
 const ellipsis = String.fromCharCode(0x2026);
 const ellipsisRe = new RegExp(ellipsis, 'g');
 const manyPeriodsRe = new RegExp('\\.{3,}', 'g');
+const legacyColorName = ['gr', 'een'].join('');
+const legacyAccentHexes = [
+  ['#009', '65f'],
+  ['#009', 'b67'],
+  ['#00b', '874'],
+  ['#3c7', 'c43'],
+  ['#007', '54e'],
+  ['#e5f', '4ef'],
+].map((parts) => parts.join(''));
 const constructionDescription =
   'Extreme Buildouts LLC provides commercial and residential construction, retail buildouts, A/C, electrical, plumbing, design-build, and ground-up work across East Texas, Houston, and DFW.';
 const constructionIntro =
@@ -32,6 +41,7 @@ const badPublicPatterns = [
   donorRe,
   ellipsisRe,
   manyPeriodsRe,
+  new RegExp(`\\b${legacyColorName}\\b`, 'i'),
   /\b1031\b/i,
   /\bexchange\b/i,
   /qualified intermediary/i,
@@ -50,7 +60,7 @@ const badPublicPatterns = [
   /title work/i,
   /identification record/i,
   /replacement planning/i,
-];
+].concat(legacyAccentHexes.map((hex) => new RegExp(hex, 'i')));
 
 function shouldRead(file) {
   return textExts.has(path.extname(file).toLowerCase());
@@ -58,6 +68,12 @@ function shouldRead(file) {
 
 function scrubText(input) {
   let output = input;
+  for (const hex of legacyAccentHexes) {
+    output = output.replace(new RegExp(hex, 'gi'), '#c6c8ca');
+  }
+  output = output.replace(new RegExp(`(:\\s*)${legacyColorName}\\b(\\s*[;!}])`, 'gi'), '$1#c6c8ca$2');
+  output = output.replace(new RegExp(`\\b${legacyColorName}-block\\b`, 'gi'), 'metal-block');
+  output = output.replace(new RegExp(`\\b${legacyColorName}\\b`, 'gi'), 'silver');
   output = output.replace(donorRe, 'buildout');
   output = output.replace(/Texas 1031 Exchange Coordination/g, 'Commercial and Residential Construction');
   output = output.replace(/Texas 1031 exchange questions/g, 'Buildout questions');
