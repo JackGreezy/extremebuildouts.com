@@ -948,16 +948,33 @@ def clean_contact_page():
     soup = read_soup(path)
     set_meta(soup, "Start a buildout review", CONTACT_DESCRIPTION, "/contact")
     ensure_project_css(soup)
-    rich = soup.select_one(".section-grid .paragraph.w-richtext")
-    if rich is not None:
-        rich.clear()
-        rich.append(
+    hero_form = soup.select_one(".section-grid .form-block")
+    if hero_form is not None:
+        hero_form.clear()
+        hero_form.append(
             soupify(
                 """
-<p>Send the project address or area, space type, schedule, known utility needs, and the work you want priced. Extreme Buildouts LLC will review the construction scope and return practical next steps.</p>
+<div class="paragraph w-richtext">
+  <p>Send the project address or area, space type, schedule, known utility needs, and the work you want priced. Extreme Buildouts LLC will review the construction scope and return practical next steps.</p>
+</div>
+<div class="form-block w-form">
+  <form action="/api/contact" method="post">
+    <div class="form-div"><input class="w-input _w-input" name="fullName" placeholder="Full name" required="" type="text"/></div>
+    <div class="form-div"><input class="w-input _w-input" name="phoneNumber" placeholder="Phone" required="" type="tel"/></div>
+    <div class="form-div"><input class="w-input _w-input" name="emailAddress" placeholder="Email" required="" type="email"/></div>
+    <div class="form-div"><input class="w-input _w-input" name="projectAddress" placeholder="Project address or area" type="text"/></div>
+    <div class="form-div"><input class="w-input _w-input" name="serviceType" placeholder="Project type" type="text"/></div>
+    <div class="form-div"><textarea class="w-input _w-input" name="projectDetails" placeholder="Tell us about the space, schedule, and work needed" rows="4"></textarea></div>
+    <button class="button underlined-text w-button" type="submit">Request a Buildout Review</button>
+  </form>
+</div>
 """
             )
         )
+
+    trailing_form = soup.select_one("body > .form-block.w-form")
+    if trailing_form is not None:
+        trailing_form.decompose()
     write_soup(path, soup)
 
 
