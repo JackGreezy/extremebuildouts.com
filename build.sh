@@ -4,9 +4,9 @@ set -euo pipefail
 ROOT=/Users/jackgreenberg/Desktop/rank-and-rent
 S=$ROOT/David/clones/scripts
 PROJ=$ROOT/David/clones/extremebuildouts.com
-REFHOST=webcor-com
+REFHOST=extreme-reference
 VOICE=$S/voice/construction-buildouts.json
-PAGES="home=https://www.webcor.com/,about=https://www.webcor.com/purpose,contact=https://www.webcor.com/contact-form,index=https://www.webcor.com/portfolio-search,slug=https://www.webcor.com/projects/ucsb-san-benito-student-housing"
+PAGES="home=https://extremebuildouts.com/,about=https://extremebuildouts.com/about,contact=https://extremebuildouts.com/contact,index=https://extremebuildouts.com/projects,slug=https://extremebuildouts.com/projects/mechanical-room-buildout"
 
 CFG=$PROJ/home.config.json
 MAP=$S/relabel-map-$REFHOST.json
@@ -16,7 +16,7 @@ CAP=$ROOT/David/clones/_captures/$REFHOST
 [ -f "$MAP" ] || { echo "MISSING $MAP"; exit 1; }
 
 if [ ! -f "$CAP/public/home.html.ref" ]; then
-  node "$S/faithful-home.mjs" --src "https://www.webcor.com/" --pages "$PAGES" --dir "$CAP"
+  node "$S/faithful-home.mjs" --src "https://extremebuildouts.com/" --pages "$PAGES" --dir "$CAP"
 fi
 
 mkdir -p "$PROJ/public" "$PROJ/qa-out"
@@ -37,7 +37,8 @@ cp -R "$PROJ/public/images/." "$PROJ/public/ours/"
 python3 "$S/relabel_engine.py" --config "$CFG" --map "$MAP" --voice "$VOICE"
 rm -rf "$PROJ/public/assets-f/img" "$PROJ/public/assets-f/js"
 python3 "$PROJ/scripts/add-project-gallery.py"
+node "$PROJ/scripts/scrub-public-output.mjs"
 python3 "$S/verify_site.py" "$PROJ" --map "$MAP" --json "$PROJ/qa-out/verify.json"
 node "$S/qa_shots.mjs" "$PROJ" --port 4798
 
-echo "BUILD COMPLETE — gates green. Human QA: open $PROJ/qa-out/CONTACT-SHEET.html"
+echo "BUILD COMPLETE - gates green. Human QA: open $PROJ/qa-out/CONTACT-SHEET.html"

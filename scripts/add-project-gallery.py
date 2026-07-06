@@ -127,6 +127,9 @@ PROJECT_CSS = """
 .rr-site-footer{background:#101820!important;color:#fff!important;padding:0!important}
 .rr-site-footer a{color:#dfe9ef!important;text-decoration:none!important}
 .rr-site-footer a:hover{color:#fff!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important}
+.rr-burger{margin-left:auto!important}
+html body [data-rr-mobile]{right:0!important;margin-right:0!important;width:min(86vw,320px)!important;max-width:min(86vw,320px)!important;transform:translateX(125%)!important;transition:transform .25s!important}
+html body.rr-nav-open [data-rr-mobile]{transform:translateX(0)!important;width:min(86vw,320px)!important;max-width:min(86vw,320px)!important}
 .rr-footer-inner{max-width:1220px;margin:0 auto;padding:54px 30px 34px}
 .rr-footer-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14)}
 .rr-footer-brand .rr-wordmark{display:inline-flex!important;flex-direction:column!important;gap:0!important;margin-bottom:18px!important}
@@ -580,6 +583,40 @@ def enhance_taxonomy_indexes():
         write_soup(path, soup)
 
 
+def expand_about_page():
+    path = PUBLIC / "about.html"
+    if not path.exists():
+        return
+    soup = read_soup(path)
+    if soup.find(class_="rr-about-depth"):
+        return
+    ensure_project_css(soup)
+    current = soup.select_one("body > .padding")
+    body = soup.body
+    section = soupify(
+        """
+<section class="padding rr-about-depth">
+  <div class="rr-taxonomy-intro">
+    <h6>How We Work</h6>
+    <h2>Construction, A/C, electrical, and plumbing under one plan</h2>
+    <p>Extreme Buildouts LLC is built for owners who need one accountable construction team to look at the full job, not a stack of disconnected trade visits. A retail buildout, restaurant finish-out, office renovation, home addition, warehouse upgrade, or ground-up project can all depend on the same field reality: walls, ceilings, utilities, equipment, inspections, access, schedule, and cleanup have to line up before the space is ready.</p>
+    <p>The work starts with existing conditions and the intended use of the property. Crews look at service access, rough-in paths, fixture and equipment locations, ceiling conflicts, shutdown windows, finish expectations, and the owner decisions that affect price or schedule. That review gives the project a cleaner order before demolition, framing, A/C, electrical, plumbing, finishes, and punch work begin.</p>
+    <div class="rr-taxonomy-card-grid">
+      <div><strong>In-House Coordination</strong><span>A/C, electrical, plumbing, construction sequencing, finish work, and closeout are planned together.</span></div>
+      <div><strong>Commercial And Residential</strong><span>Retail, restaurants, offices, warehouses, homes, renovations, additions, and ground-up work are handled with practical field planning.</span></div>
+      <div><strong>Owner Clarity</strong><span>Scopes identify what is included, what needs field verification, and which decisions should be made before crews mobilize.</span></div>
+    </div>
+  </div>
+</section>
+"""
+    )
+    if current is not None:
+        current.insert_after(section)
+    elif body is not None:
+        body.append(section)
+    write_soup(path, soup)
+
+
 def clean_not_found_copy():
     path = PUBLIC / "404.html"
     if not path.exists():
@@ -647,6 +684,7 @@ def main():
     build_projects_index(media)
     add_home_teaser(media)
     enhance_taxonomy_indexes()
+    expand_about_page()
     clean_not_found_copy()
     update_footer_and_nav_all()
     update_sitemap()

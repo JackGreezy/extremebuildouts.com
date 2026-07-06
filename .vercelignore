@@ -1,0 +1,14 @@
+.git
+.vercel
+.env.local
+.DS_Store
+qa-out
+public/*.html.ref
+build.sh
+home.config.json
+data
+scripts
+services
+building-types
+industries
+locations

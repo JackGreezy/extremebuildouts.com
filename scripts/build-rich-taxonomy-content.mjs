@@ -267,13 +267,11 @@ function linksFor(tax, selfSlug, count = 8) {
     industries: industryItems.map(([slug, name]) => ({ taxonomy: 'industries', slug, anchor: name })),
     locations: locationItems.map(([slug, name]) => ({ taxonomy: 'locations', slug, anchor: name })),
   };
-  const order = [
-    ...(pools[tax] || []),
-    ...pools.services,
-    ...pools['building-types'],
-    ...pools.industries,
-    ...pools.locations,
-  ];
+  const order = [];
+  const groups = [pools[tax] || [], pools.services, pools['building-types'], pools.industries, pools.locations];
+  for (const group of groups) {
+    for (const item of group) order.push(item);
+  }
   const seen = new Set();
   const out = [];
   for (const item of order) {
@@ -596,8 +594,8 @@ fs.writeFileSync(path.join(project, 'home.config.json'), `${JSON.stringify({
   domain: 'extremebuildouts.com',
   clone_dir: project,
   content_dir: project,
-  reference: 'https://www.webcor.com/',
-  refhost: 'webcor-com',
+  reference: 'https://extremebuildouts.com/',
+  refhost: 'extreme-reference',
   biz: bizName,
   wordmark_l1: 'Extreme',
   wordmark_l2: 'Buildouts LLC',
