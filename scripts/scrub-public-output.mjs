@@ -41,6 +41,15 @@ const badPublicPatterns = [
   /closing records/i,
   /forty-five day window/i,
   /deadline-first/i,
+  /sale timing/i,
+  /debt targets/i,
+  /diligence/i,
+  /QI calls/i,
+  /CPA review/i,
+  /attorney notes/i,
+  /title work/i,
+  /identification record/i,
+  /replacement planning/i,
 ];
 
 function shouldRead(file) {

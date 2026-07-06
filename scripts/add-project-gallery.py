@@ -11,6 +11,9 @@ PUBLIC = PROJECT / "public"
 MEDIA_JSON = PUBLIC / "ours/projects/project-media.json"
 DOMAIN = "https://extremebuildouts.com"
 BIZ = "Extreme Buildouts LLC"
+LOGO_SRC = "/logo.png"
+FAVICON_SRC = "/favicon.png"
+APPLE_ICON_SRC = "/apple-touch-icon.png"
 
 DETAIL_ROUTE = "/projects/mechanical-room-buildout"
 INDEX_ROUTE = "/projects"
@@ -19,6 +22,14 @@ INDEX_TITLE = "Example Projects"
 DESCRIPTION = (
     "Example project photos from Extreme Buildouts LLC showing commercial mechanical room, "
     "A/C piping, plumbing, equipment, ductwork, and field buildout coordination."
+)
+ABOUT_DESCRIPTION = (
+    "Extreme Buildouts LLC coordinates commercial and residential construction, retail buildouts, "
+    "A/C, electrical, plumbing, design-build, renovations, and ground-up work across Texas."
+)
+CONTACT_DESCRIPTION = (
+    "Send Extreme Buildouts LLC the project address, space type, schedule, known utility needs, "
+    "and construction work you want reviewed."
 )
 
 
@@ -79,71 +90,86 @@ def set_meta(soup, title, desc, route):
 
 PROJECT_CSS = """
 <style id="rr-project-gallery-css">
-.rr-project-teaser{background:#fff}
-.rr-project-eyebrow{color:#009b67!important;text-transform:uppercase!important;letter-spacing:.12em!important;font-weight:800!important}
+:root{--eb-black:#050505;--eb-graphite:#141516;--eb-charcoal:#202326;--eb-gunmetal:#3f4448;--eb-steel:#747a80;--eb-silver:#c6c8ca;--eb-bright:#f7f7f7}
+html body{background:#f3f3f1!important;color:#141516!important}
+.rr-project-teaser{background:#f7f7f7}
+.rr-project-eyebrow{color:#5f6469!important;text-transform:uppercase!important;letter-spacing:.12em!important;font-weight:800!important}
 .rr-project-index{max-width:1180px;margin:0 auto}
 .rr-project-index h1,.rr-project-page h1{max-width:980px}
-.rr-project-index>p,.rr-project-lede{max-width:880px!important;color:#455666!important}
+.rr-project-index>p,.rr-project-lede{max-width:880px!important;color:#4d5358!important}
 .rr-project-index-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:34px 0 22px}
-.rr-project-index-card{display:flex!important;min-height:100%;flex-direction:column;background:#fff!important;border:1px solid rgba(69,85,102,.18)!important;text-decoration:none!important;color:inherit!important;box-shadow:0 10px 28px rgba(20,34,48,.07)!important;overflow:hidden}
+.rr-project-index-card{display:flex!important;min-height:100%;flex-direction:column;background:#fff!important;border:1px solid rgba(20,21,22,.16)!important;text-decoration:none!important;color:inherit!important;box-shadow:0 10px 28px rgba(5,5,5,.08)!important;overflow:hidden}
 .rr-project-index-card img{display:block!important;width:100%!important;aspect-ratio:4/3!important;height:auto!important;object-fit:cover!important;transition:transform .22s ease}
 .rr-project-index-card:hover img{transform:scale(1.035)}
 .rr-project-card-copy{display:flex!important;min-height:160px!important;flex-direction:column!important;justify-content:space-between!important;padding:22px!important}
-.rr-project-card-title{margin:0!important;color:#101820!important;font-size:20px!important;line-height:1.12!important;letter-spacing:0!important;text-transform:none!important}
-.rr-project-card-text{margin:12px 0 0!important;font-size:15px!important;line-height:1.42!important;color:#455666!important;letter-spacing:0!important;text-transform:none!important}
+.rr-project-card-title{margin:0!important;color:#101112!important;font-size:20px!important;line-height:1.12!important;letter-spacing:0!important;text-transform:none!important}
+.rr-project-card-text{margin:12px 0 0!important;font-size:15px!important;line-height:1.42!important;color:#4d5358!important;letter-spacing:0!important;text-transform:none!important}
 .rr-project-index-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:22px 0 0}
 .rr-project-index-strip img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
 .rr-project-page{max-width:1220px;margin:0 auto}
 .rr-project-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:34px;align-items:end;margin-bottom:34px}
-.rr-project-hero-media{background:#101820;border:1px solid rgba(69,85,102,.18);box-shadow:0 16px 34px rgba(20,34,48,.12)}
+.rr-project-hero-media{background:#050505;border:1px solid rgba(198,200,202,.28);box-shadow:0 16px 34px rgba(5,5,5,.18)}
 .rr-project-hero-media img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
 .rr-project-section{margin:44px 0}
 .rr-project-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
 .rr-project-section-heading h2{margin-bottom:0!important}
-.rr-project-section-heading p{max-width:540px!important;margin:0!important;color:#455666!important}
+.rr-project-section-heading p{max-width:540px!important;margin:0!important;color:#4d5358!important}
 .rr-project-gallery{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin:18px 0 0}
-.rr-project-gallery figure{position:relative;grid-column:span 4;margin:0;background:#101820;border:1px solid rgba(69,85,102,.18);box-shadow:0 8px 22px rgba(20,34,48,.06);overflow:hidden}
+.rr-project-gallery figure{position:relative;grid-column:span 4;margin:0;background:#050505;border:1px solid rgba(20,21,22,.18);box-shadow:0 8px 22px rgba(5,5,5,.08);overflow:hidden}
 .rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6){grid-column:span 6}
 .rr-project-gallery img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover}
-.rr-project-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(180deg,rgba(16,24,32,0),rgba(16,24,32,.82));font-weight:800;color:#fff;line-height:1.24;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.rr-project-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(180deg,rgba(5,5,5,0),rgba(5,5,5,.86));font-weight:800;color:#fff;line-height:1.24;text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .rr-project-gallery.rr-field-gallery figure{grid-column:span 3}
 .rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6){grid-column:span 6}
 .rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 4}
 .rr-project-gallery.rr-field-gallery img{aspect-ratio:1/1}
 .rr-project-gallery.rr-field-gallery figure:nth-child(10n+1) img,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6) img{aspect-ratio:16/9}
-.rr-project-video{margin:18px 0 0;background:#111;border:1px solid rgba(69,85,102,.22);box-shadow:0 14px 32px rgba(20,34,48,.12)}
-.rr-project-video video{display:block;width:100%;max-height:680px;background:#111}
+.rr-project-video{margin:18px 0 0;background:#050505;border:1px solid rgba(198,200,202,.24);box-shadow:0 14px 32px rgba(5,5,5,.16)}
+.rr-project-video video{display:block;width:100%;max-height:680px;background:#050505}
 .rr-project-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0 10px}
-.rr-project-metrics div{border:1px solid rgba(69,85,102,.18);padding:18px 20px;background:#fff}
-.rr-project-metrics strong{display:block;color:#009b67;font-size:24px;line-height:1}
-.rr-project-metrics span{display:block;margin-top:6px;font-weight:700;color:#455666}
+.rr-project-metrics div{border:1px solid rgba(20,21,22,.16);padding:18px 20px;background:#fff}
+.rr-project-metrics strong{display:block;color:#202326;font-size:24px;line-height:1}
+.rr-project-metrics span{display:block;margin-top:6px;font-weight:700;color:#4d5358}
 .rr-taxonomy-intro{max-width:1120px;margin:10px 0 32px}
 .rr-taxonomy-intro h1{margin:18px 0 14px!important}
-.rr-taxonomy-intro p{max-width:980px!important;color:#455666!important}
+.rr-taxonomy-intro p{max-width:980px!important;color:#4d5358!important}
 .rr-taxonomy-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
-.rr-taxonomy-card-grid div{border:1px solid rgba(69,85,102,.18);background:#fff;padding:18px 20px;box-shadow:0 8px 22px rgba(20,34,48,.05)}
-.rr-taxonomy-card-grid strong{display:block;color:#009b67;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
-.rr-taxonomy-card-grid span{display:block;color:#455666;font-weight:700;line-height:1.35}
-.rr-site-footer{background:#101820!important;color:#fff!important;padding:0!important}
-.rr-site-footer a{color:#dfe9ef!important;text-decoration:none!important}
+.rr-taxonomy-card-grid div{border:1px solid rgba(20,21,22,.16);background:#fff;padding:18px 20px;box-shadow:0 8px 22px rgba(5,5,5,.06)}
+.rr-taxonomy-card-grid strong{display:block;color:#202326;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
+.rr-taxonomy-card-grid span{display:block;color:#4d5358;font-weight:700;line-height:1.35}
+.rr-site-footer{background:linear-gradient(180deg,#111213,#050505)!important;color:#fff!important;padding:0!important;border-top:1px solid rgba(198,200,202,.22)!important}
+.rr-site-footer a{color:#d8dadc!important;text-decoration:none!important}
 .rr-site-footer a:hover{color:#fff!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important}
+.rr-logo-link{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;text-decoration:none!important;line-height:0!important;flex:0 0 auto!important}
+.rr-site-logo{display:block!important;width:100%!important;height:auto!important;max-width:100%!important;object-fit:contain!important}
+.navigation-top-simple{background:linear-gradient(180deg,#0d0d0e,#1a1c1e)!important;border-bottom:1px solid rgba(198,200,202,.2)!important;box-shadow:0 8px 26px rgba(0,0,0,.2)!important}
+.navigation-top-simple .navbar-container{background:transparent!important}
+.navigation-top-simple .rr-logo-link{width:clamp(198px,25vw,320px)!important;min-width:198px!important}
+.navigation-top-simple .rr-site-logo{max-height:74px!important}
+.navigation-top-simple .refresh-navlinks.top{color:#f1f1f1!important;text-shadow:none!important}
+.navigation-top-simple .refresh-navlinks.top:hover{color:#c6c8ca!important}
+.navigation-top-simple .rr-burger{color:#f7f7f7!important}
+.navigation-top-simple .rr-burger span{background:#f7f7f7!important}
+.button,.w-button,.hero-button div{background:linear-gradient(135deg,#f7f7f7 0%,#c6c8ca 45%,#747a80 100%)!important;color:#050505!important;border:1px solid rgba(5,5,5,.35)!important;text-shadow:none!important;box-shadow:0 10px 24px rgba(5,5,5,.16)!important;font-weight:900!important}
+.button:hover,.w-button:hover{background:linear-gradient(135deg,#fff 0%,#d8dadc 45%,#8a9095 100%)!important;color:#050505!important}
 .rr-burger{margin-left:auto!important}
 html body [data-rr-mobile]{right:0!important;margin-right:0!important;width:min(86vw,320px)!important;max-width:min(86vw,320px)!important;transform:translateX(125%)!important;transition:transform .25s!important}
 html body.rr-nav-open [data-rr-mobile]{transform:translateX(0)!important;width:min(86vw,320px)!important;max-width:min(86vw,320px)!important}
 .rr-footer-inner{max-width:1220px;margin:0 auto;padding:54px 30px 34px}
-.rr-footer-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14)}
-.rr-footer-brand .rr-wordmark{display:inline-flex!important;flex-direction:column!important;gap:0!important;margin-bottom:18px!important}
-.rr-footer-brand p{max-width:720px!important;margin:0!important;color:#c8d3db!important;font-size:17px!important;line-height:1.55!important}
+.rr-footer-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(198,200,202,.18)}
+.rr-footer-brand .rr-footer-logo-link{width:min(340px,100%)!important;margin-bottom:18px!important}
+.rr-footer-brand .rr-site-logo{max-height:96px!important}
+.rr-footer-brand p{max-width:720px!important;margin:0!important;color:#d8dadc!important;font-size:17px!important;line-height:1.55!important}
 .rr-footer-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.rr-footer-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;padding:12px 18px!important;border:1px solid rgba(255,255,255,.28)!important;background:#009b67!important;color:#fff!important;font-weight:800!important;line-height:1!important}
-.rr-footer-button-alt{background:transparent!important;color:#fff!important}
+.rr-footer-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;padding:12px 18px!important;border:1px solid rgba(198,200,202,.55)!important;background:linear-gradient(135deg,#f7f7f7,#aeb3b8)!important;color:#050505!important;font-weight:900!important;line-height:1!important}
+.rr-footer-button-alt{background:transparent!important;color:#f7f7f7!important;border-color:rgba(198,200,202,.38)!important}
 .rr-footer-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;margin-top:34px}
 .rr-footer-col h2{margin:0 0 13px!important;color:#fff!important;font-size:15px!important;line-height:1.2!important;letter-spacing:.08em!important;text-transform:uppercase!important}
-.rr-footer-col a{display:block!important;margin:0 0 8px!important;color:#dfe9ef!important;font-size:14px!important;line-height:1.28!important}
-.rr-footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);color:#aebbc4;font-size:13px}
+.rr-footer-col a{display:block!important;margin:0 0 8px!important;color:#d8dadc!important;font-size:14px!important;line-height:1.28!important}
+.rr-footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid rgba(198,200,202,.18);color:#b8bdc1;font-size:13px}
 @media(max-width:1100px){.rr-project-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 6}.rr-project-hero-grid{grid-template-columns:1fr}}
 @media(max-width:1100px){.rr-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rr-footer-top{grid-template-columns:1fr}.rr-footer-actions{justify-content:flex-start}}
-@media(max-width:800px){.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}.rr-footer-grid{grid-template-columns:1fr 1fr}.rr-footer-inner{padding:42px 20px 28px}}
+@media(max-width:800px){.navigation-top-simple .rr-logo-link{width:min(58vw,250px)!important;min-width:170px!important}.navigation-top-simple .rr-site-logo{max-height:58px!important}.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}.rr-footer-grid{grid-template-columns:1fr 1fr}.rr-footer-inner{padding:42px 20px 28px}}
 @media(max-width:800px){.rr-taxonomy-card-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.rr-footer-grid{grid-template-columns:1fr}.rr-footer-actions{display:grid;grid-template-columns:1fr}.rr-footer-button{width:100%}}
 </style>
@@ -153,6 +179,118 @@ html body.rr-nav-open [data-rr-mobile]{transform:translateX(0)!important;width:m
 def ensure_project_css(soup):
     if soup.head and not soup.find(id="rr-project-gallery-css"):
         soup.head.append(soupify(PROJECT_CSS))
+
+
+def set_icon_links(soup):
+    if soup.head is None:
+        return
+    for tag in list(soup.find_all("link")):
+        rel = tag.get("rel", [])
+        if isinstance(rel, str):
+            rel_text = rel.lower()
+        else:
+            rel_text = " ".join(rel).lower()
+        if "icon" in rel_text:
+            tag.decompose()
+    for rel, href, type_value in (
+        ("icon", FAVICON_SRC, "image/png"),
+        ("shortcut icon", FAVICON_SRC, "image/png"),
+        ("apple-touch-icon", APPLE_ICON_SRC, None),
+    ):
+        tag = soup.new_tag("link")
+        tag["rel"] = rel
+        tag["href"] = href
+        if type_value:
+            tag["type"] = type_value
+        soup.head.append(tag)
+
+
+def logo_anchor(soup, anchor, footer=False):
+    classes = [c for c in anchor.get("class", []) if c != "rr-wordmark"]
+    for cls in ("rr-logo-link", "rr-footer-logo-link" if footer else "rr-header-logo-link"):
+        if cls not in classes:
+            classes.append(cls)
+    anchor["class"] = classes
+    anchor["href"] = anchor.get("href") or "/"
+    anchor["aria-label"] = BIZ
+    anchor.clear()
+    img = soup.new_tag("img", src=LOGO_SRC, alt=BIZ)
+    img["class"] = ["rr-site-logo"]
+    anchor.append(img)
+
+
+def replace_text_logos(soup):
+    for anchor in soup.select("a.rr-wordmark"):
+        logo_anchor(soup, anchor, footer=anchor.find_parent("footer") is not None)
+    for anchor in soup.select("header a.refresh-logo, header a.w-nav-brand"):
+        if anchor.find("img", src=LOGO_SRC):
+            continue
+        logo_anchor(soup, anchor, footer=False)
+
+
+def neutralize_old_wordmark_css(soup):
+    replacements = {
+        "rr-wordmark": "rr-old-text-logo",
+        "rr-wm-1": "rr-old-text-logo-1",
+        "rr-wm-2": "rr-old-text-logo-2",
+    }
+    for style in soup.find_all("style"):
+        if not style.string:
+            continue
+        text = str(style.string)
+        updated = text
+        for old, new in replacements.items():
+            updated = updated.replace(old, new)
+        if updated != text:
+            style.string.replace_with(updated)
+
+
+FINAL_BRAND_CSS = """
+<style id="rr-final-brand-css">
+header.navigation-top-simple{background:linear-gradient(180deg,#080809,#181a1c)!important;border-bottom:1px solid rgba(198,200,202,.26)!important;box-shadow:0 10px 28px rgba(0,0,0,.24)!important;min-height:92px!important}
+header.navigation-top-simple .navbar-container{background:transparent!important;min-height:92px!important;padding:0 54px!important}
+header.navigation-top-simple a.rr-logo-link.refresh-logo{width:clamp(245px,23vw,360px)!important;min-width:245px!important;max-width:360px!important;height:auto!important;padding:0!important;margin:0!important}
+header.navigation-top-simple .rr-site-logo{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+header.navigation-top-simple .nav-menu-2,header.navigation-top-simple .nav-menu-2>.w-dropdown{background:transparent!important}
+header.navigation-top-simple .refresh-navlinks.top{color:#f5f5f5!important;font-weight:800!important;text-shadow:none!important}
+header.navigation-top-simple .refresh-navlinks.top:hover{color:#c6c8ca!important}
+header.navigation-top-simple .rr-burger{color:#f5f5f5!important;background:transparent!important}
+header.navigation-top-simple .rr-burger span{background:#f5f5f5!important}
+body .heading-110,body .homepage-content-right h2,body .rr-project-card-title,body .rr-taxonomy-intro h1,body .rr-taxonomy-intro h2{color:#141516!important}
+body .h5,body .h6-reeduced,body .rr-project-eyebrow,body .homepage-content-right h6:not(.white){color:#5f6469!important}
+body .paragraph,body .rr-project-card-text,body .rr-project-lede,body .rr-taxonomy-intro p{color:#4d5358!important}
+body .button,body .w-button,body .hero-button div{background:linear-gradient(135deg,#f7f7f7 0%,#c6c8ca 48%,#747a80 100%)!important;color:#050505!important;border:1px solid rgba(5,5,5,.45)!important;text-shadow:none!important;font-weight:900!important}
+body .button:hover,body .w-button:hover{background:linear-gradient(135deg,#ffffff 0%,#d8dadc 48%,#8a9095 100%)!important;color:#050505!important}
+footer.rr-site-footer{background:linear-gradient(180deg,#111213,#050505)!important;border-top:1px solid rgba(198,200,202,.26)!important}
+footer.rr-site-footer .rr-footer-logo-link{display:inline-flex!important;width:min(340px,100%)!important;max-width:340px!important;margin-bottom:18px!important}
+footer.rr-site-footer .rr-site-logo{width:100%!important;height:auto!important;max-height:none!important}
+footer.rr-site-footer .rr-footer-button{color:#050505!important}
+footer.rr-site-footer .rr-footer-button-alt{color:#f7f7f7!important;background:transparent!important}
+@media(max-width:980px){
+  header.navigation-top-simple{min-height:80px!important}
+  header.navigation-top-simple .navbar-container{min-height:80px!important;padding:0 18px!important}
+  header.navigation-top-simple a.rr-logo-link.refresh-logo{width:min(62vw,250px)!important;min-width:210px!important;max-width:250px!important}
+}
+@media(max-width:420px){
+  header.navigation-top-simple a.rr-logo-link.refresh-logo{width:min(64vw,230px)!important;min-width:190px!important}
+}
+</style>
+"""
+
+
+def ensure_final_brand_css(soup):
+    if soup.head is None:
+        return
+    for style in soup.find_all("style", id="rr-final-brand-css"):
+        style.decompose()
+    soup.head.append(soupify(FINAL_BRAND_CSS))
+
+
+def set_brand_assets(soup):
+    set_icon_links(soup)
+    replace_text_logos(soup)
+    neutralize_old_wordmark_css(soup)
+    ensure_final_brand_css(soup)
 
 
 def make_link(soup, label, href):
@@ -292,7 +430,7 @@ def build_footer_markup():
   <div class="rr-footer-inner">
     <div class="rr-footer-top">
       <div class="rr-footer-brand">
-        <a class="rr-wordmark" href="/"><span class="rr-wm-1">Extreme</span><span class="rr-wm-2">Buildouts LLC</span></a>
+        <a class="rr-logo-link rr-footer-logo-link" href="/" aria-label="{html.escape(BIZ, quote=True)}"><img class="rr-site-logo" src="{LOGO_SRC}" alt="{html.escape(BIZ, quote=True)}"/></a>
         <p>Commercial and residential buildouts, A/C, electrical, plumbing, design-build, retail finish-outs, renovations, and ground-up construction across East Texas, Greater Houston, and Dallas-Fort Worth.</p>
       </div>
       <div class="rr-footer-actions">
@@ -493,6 +631,7 @@ def update_footer_and_nav_all():
         add_projects_nav(soup)
         ensure_project_css(soup)
         replace_footer(soup)
+        set_brand_assets(soup)
         write_soup(path, soup)
 
 
@@ -588,10 +727,24 @@ def expand_about_page():
     if not path.exists():
         return
     soup = read_soup(path)
-    if soup.find(class_="rr-about-depth"):
-        return
+    set_meta(soup, "About Extreme Buildouts LLC", ABOUT_DESCRIPTION, "/about")
     ensure_project_css(soup)
     current = soup.select_one("body > .padding")
+    grid = current.select_one(".grid-8") if current is not None else None
+    if grid is not None:
+        grid.clear()
+        grid.append(
+            soupify(
+                """
+<h1>About Extreme Buildouts LLC</h1>
+<p class="paragraph-emphasized">Extreme Buildouts LLC handles commercial and residential construction with A/C, electrical, plumbing, design-build, renovation, retail finish-out, and ground-up work coordinated under one roof.</p>
+<p class="paragraph">The company is built for owners who need the field work, trade sequencing, utility planning, finishes, and closeout handled as one practical construction scope. Every project starts with the intended use of the space, existing conditions, access, schedule, inspections, equipment needs, and the owner decisions that affect price or timing.</p>
+"""
+            )
+        )
+    if soup.find(class_="rr-about-depth"):
+        write_soup(path, soup)
+        return
     body = soup.body
     section = soupify(
         """
@@ -614,6 +767,26 @@ def expand_about_page():
         current.insert_after(section)
     elif body is not None:
         body.append(section)
+    write_soup(path, soup)
+
+
+def clean_contact_page():
+    path = PUBLIC / "contact.html"
+    if not path.exists():
+        return
+    soup = read_soup(path)
+    set_meta(soup, "Start a buildout review", CONTACT_DESCRIPTION, "/contact")
+    ensure_project_css(soup)
+    rich = soup.select_one(".section-grid .paragraph.w-richtext")
+    if rich is not None:
+        rich.clear()
+        rich.append(
+            soupify(
+                """
+<p>Send the project address or area, space type, schedule, known utility needs, and the work you want priced. Extreme Buildouts LLC will review the construction scope and return practical next steps.</p>
+"""
+            )
+        )
     write_soup(path, soup)
 
 
@@ -685,6 +858,7 @@ def main():
     add_home_teaser(media)
     enhance_taxonomy_indexes()
     expand_about_page()
+    clean_contact_page()
     clean_not_found_copy()
     update_footer_and_nav_all()
     update_sitemap()
