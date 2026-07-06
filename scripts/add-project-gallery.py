@@ -130,6 +130,24 @@ html body{background:#f3f3f1!important;color:#141516!important}
 .rr-project-metrics div{border:1px solid rgba(20,21,22,.16);padding:18px 20px;background:#fff}
 .rr-project-metrics strong{display:block;color:#202326;font-size:24px;line-height:1}
 .rr-project-metrics span{display:block;margin-top:6px;font-weight:700;color:#4d5358}
+.rr-home-hero{position:relative;min-height:calc(100vh - 76px);background:#050505;color:#fff;overflow:hidden}
+.rr-home-hero-track{position:relative;min-height:inherit}
+.rr-home-hero-slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .55s ease}
+.rr-home-hero-slide.is-active{opacity:1;pointer-events:auto}
+.rr-home-hero-slide img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.rr-home-hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.56) 32%,rgba(0,0,0,.22) 66%,rgba(0,0,0,.08) 100%)}
+.rr-home-hero-copy{position:relative;z-index:2;display:flex;min-height:calc(100vh - 76px);max-width:720px;flex-direction:column;justify-content:center;padding:86px 0 104px 9.5vw}
+.rr-home-hero-kicker{margin:0 0 18px;color:#fff;font-size:14px;font-weight:850;letter-spacing:.18em;line-height:1;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.rr-home-hero-title{margin:0 0 18px;color:#fff;font-size:clamp(36px,4.6vw,72px);font-weight:900;line-height:.96;letter-spacing:0;text-shadow:0 2px 16px rgba(0,0,0,.82)}
+.rr-home-hero-text{max-width:660px;margin:0;color:#fff;font-size:clamp(16px,1.25vw,21px);font-weight:750;line-height:1.48;text-shadow:0 2px 14px rgba(0,0,0,.86)}
+.rr-home-hero-cta{margin-top:26px}
+.rr-home-hero-arrow{position:absolute;z-index:5;top:50%;display:flex;width:54px;height:54px;align-items:center;justify-content:center;margin:0;padding:0;background:rgba(5,5,5,.44);border:1px solid rgba(247,247,247,.64);border-radius:0;color:#fff;font-size:34px;line-height:1;transform:translateY(-50%);box-shadow:0 12px 28px rgba(0,0,0,.24);cursor:pointer}
+.rr-home-hero-arrow:hover,.rr-home-hero-arrow:focus{background:#f7f7f7;color:#050505;border-color:#f7f7f7;outline:none}
+.rr-home-hero-prev{left:28px}
+.rr-home-hero-next{right:28px}
+.rr-home-hero-dots{position:absolute;z-index:6;left:9.5vw;bottom:36px;display:flex;gap:9px}
+.rr-home-hero-dot{width:34px;height:3px;margin:0;padding:0;background:rgba(247,247,247,.42);border:0;border-radius:0;cursor:pointer}
+.rr-home-hero-dot.is-active{background:#f7f7f7}
 .rr-taxonomy-intro{max-width:1120px;margin:10px 0 32px}
 .rr-taxonomy-intro h1{margin:18px 0 14px!important}
 .rr-taxonomy-intro p{max-width:980px!important;color:#4d5358!important}
@@ -175,7 +193,7 @@ html body.rr-nav-open [data-rr-mobile]{transform:translateX(0)!important;width:m
 .rr-footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid rgba(198,200,202,.18);color:#b8bdc1;font-size:13px}
 @media(max-width:1100px){.rr-project-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:span 6}.rr-project-hero-grid{grid-template-columns:1fr}}
 @media(max-width:1100px){.rr-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rr-footer-top{grid-template-columns:1fr}.rr-footer-actions{justify-content:flex-start}}
-@media(max-width:800px){.navigation-top-simple .rr-logo-link{width:min(48vw,190px)!important;min-width:145px!important;height:58px!important}.navigation-top-simple .rr-site-logo{max-height:52px!important}.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}.rr-footer-grid{grid-template-columns:1fr 1fr}.rr-footer-inner{padding:42px 20px 28px}}
+@media(max-width:800px){.navigation-top-simple .rr-logo-link{width:min(48vw,190px)!important;min-width:145px!important;height:58px!important}.navigation-top-simple .rr-site-logo{max-height:52px!important}.rr-home-hero,.rr-home-hero-track,.rr-home-hero-copy{min-height:560px}.rr-home-hero-copy{padding:92px 26px 92px}.rr-home-hero-arrow{width:42px;height:42px;font-size:28px}.rr-home-hero-prev{left:12px}.rr-home-hero-next{right:12px}.rr-home-hero-dots{left:26px;bottom:24px}.rr-project-index-grid,.rr-project-index-strip,.rr-project-metrics{grid-template-columns:1fr}.rr-project-gallery{grid-template-columns:1fr}.rr-project-gallery figure,.rr-project-gallery figure:nth-child(1),.rr-project-gallery figure:nth-child(8n+6),.rr-project-gallery.rr-field-gallery figure,.rr-project-gallery.rr-field-gallery figure:nth-child(10n+1),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+6),.rr-project-gallery.rr-field-gallery figure:nth-child(10n+4){grid-column:auto}.rr-project-section-heading{display:block}.rr-project-video video{max-height:none}.rr-footer-grid{grid-template-columns:1fr 1fr}.rr-footer-inner{padding:42px 20px 28px}}
 @media(max-width:800px){.rr-taxonomy-card-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.rr-footer-grid{grid-template-columns:1fr}.rr-footer-actions{display:grid;grid-template-columns:1fr}.rr-footer-button{width:100%}}
 </style>
@@ -610,6 +628,137 @@ def build_projects_index(media):
     write_soup(PUBLIC / "projects.html", base)
 
 
+def pick_media(media, filename, fallback):
+    return next((m for m in media if m.get("filename") == filename), fallback)
+
+
+def build_home_hero_markup(media):
+    fallback = next((m for m in media if m["type"] == "chat-image"), media[0])
+    slide_specs = [
+        (
+            pick_media(media, "example-mechanical-room-01-mechanical-piping-controls.jpg", fallback),
+            "Commercial Mechanical Room Buildout",
+            "A/C, plumbing, electrical, controls, and mechanical piping coordinated inside one working project scope.",
+        ),
+        (
+            pick_media(media, "example-mechanical-room-02-mechanical-room-pipe-runs.jpg", fallback),
+            "Pipe Runs, Equipment, And Access",
+            "Mechanical room pathways, service clearances, and equipment access planned before the finished space turns over.",
+        ),
+        (
+            pick_media(media, "example-mechanical-room-03-overhead-mechanical-piping.jpg", fallback),
+            "Overhead Utility Coordination",
+            "Piping, supports, ceiling conflicts, and trade sequencing reviewed before closeout work locks the space in.",
+        ),
+        (
+            pick_media(media, "example-mechanical-room-04-mechanical-infrastructure-wide.jpg", fallback),
+            "Buildouts With Field Reality",
+            "A/C, plumbing, electrical, ductwork, controls, and finish work coordinated from active jobsite conditions.",
+        ),
+        (
+            pick_media(media, "field-project-photo-03-20240923-200528.jpg", fallback),
+            "Commercial Interior Systems",
+            "Ductwork, overhead utilities, and open-ceiling coordination tied into retail and commercial buildout planning.",
+        ),
+    ]
+    slides = []
+    dots = []
+    for index, (item, title, text) in enumerate(slide_specs):
+        active = " is-active" if index == 0 else ""
+        hidden = "false" if index == 0 else "true"
+        src = html.escape(item["src"], quote=True)
+        alt = html.escape(title, quote=True)
+        slides.append(
+            f"""
+<article class="rr-home-hero-slide{active}" data-rr-hero-slide aria-hidden="{hidden}">
+  <img src="{src}" alt="{alt}" loading="{'eager' if index == 0 else 'lazy'}"/>
+  <div class="rr-home-hero-copy">
+    <p class="rr-home-hero-kicker">Example Project</p>
+    <h1 class="rr-home-hero-title">{html.escape(title)}</h1>
+    <p class="rr-home-hero-text">{html.escape(text)}</p>
+    <div class="rr-home-hero-cta"><a class="button underlined-text w-button" href="/contact">Request a Buildout Review</a></div>
+  </div>
+</article>
+"""
+        )
+        dots.append(
+            f'<button class="rr-home-hero-dot{active}" type="button" aria-label="Show project image {index + 1}" data-rr-hero-dot="{index}"></button>'
+        )
+    return soupify(
+        f"""
+<section class="rr-home-hero" data-rr-home-hero>
+  <div class="rr-home-hero-track">
+    {''.join(slides)}
+  </div>
+  <button class="rr-home-hero-arrow rr-home-hero-prev" type="button" aria-label="Previous project image" data-rr-hero-prev>&#8249;</button>
+  <button class="rr-home-hero-arrow rr-home-hero-next" type="button" aria-label="Next project image" data-rr-hero-next>&#8250;</button>
+  <div class="rr-home-hero-dots" aria-label="Project image selector">{''.join(dots)}</div>
+</section>
+<script id="rr-home-hero-script">
+(function(){{
+  var root=document.querySelector('[data-rr-home-hero]');
+  if(!root) return;
+  var slides=Array.prototype.slice.call(root.querySelectorAll('[data-rr-hero-slide]'));
+  var dots=Array.prototype.slice.call(root.querySelectorAll('[data-rr-hero-dot]'));
+  var prev=root.querySelector('[data-rr-hero-prev]');
+  var next=root.querySelector('[data-rr-hero-next]');
+  var current=0;
+  var timer=null;
+  function show(index){{
+    if(!slides.length) return;
+    current=(index+slides.length)%slides.length;
+    slides.forEach(function(slide,i){{
+      var active=i===current;
+      slide.classList.toggle('is-active',active);
+      slide.setAttribute('aria-hidden',active?'false':'true');
+    }});
+    dots.forEach(function(dot,i){{
+      var active=i===current;
+      dot.classList.toggle('is-active',active);
+      dot.setAttribute('aria-current',active?'true':'false');
+    }});
+  }}
+  function move(step){{show(current+step);}}
+  function stop(){{if(timer) window.clearInterval(timer); timer=null;}}
+  function start(){{stop(); timer=window.setInterval(function(){{move(1);}},6200);}}
+  if(prev) prev.addEventListener('click',function(){{move(-1); start();}});
+  if(next) next.addEventListener('click',function(){{move(1); start();}});
+  dots.forEach(function(dot){{dot.addEventListener('click',function(){{show(Number(dot.getAttribute('data-rr-hero-dot'))||0); start();}});}});
+  root.addEventListener('mouseenter',stop);
+  root.addEventListener('mouseleave',start);
+  document.addEventListener('visibilitychange',function(){{if(document.hidden) stop(); else start();}});
+  show(0);
+  start();
+}})();
+</script>
+"""
+    )
+
+
+def replace_home_hero(media):
+    path = PUBLIC / "home.html"
+    soup = read_soup(path)
+    existing = soup.find(attrs={"data-rr-home-hero": True})
+    if existing is not None:
+        existing.decompose()
+    old_script = soup.find("script", id="rr-home-hero-script")
+    if old_script is not None:
+        old_script.decompose()
+    hero = build_home_hero_markup(media)
+    slider = soup.select_one(".slider.w-slider")
+    if slider is not None:
+        slider.replace_with(hero)
+    else:
+        header = soup.find("header")
+        if header is not None:
+            header.insert_after(hero)
+        elif soup.body is not None:
+            soup.body.insert(0, hero)
+    ensure_project_css(soup)
+    add_projects_nav(soup)
+    write_soup(path, soup)
+
+
 def add_home_teaser(media):
     path = PUBLIC / "home.html"
     soup = read_soup(path)
@@ -871,6 +1020,7 @@ def main():
     media = json.loads(MEDIA_JSON.read_text(encoding="utf-8"))
     build_project_detail(media)
     build_projects_index(media)
+    replace_home_hero(media)
     add_home_teaser(media)
     enhance_taxonomy_indexes()
     expand_about_page()
@@ -880,7 +1030,7 @@ def main():
     update_sitemap()
     update_llms()
     strip_generated_html_whitespace()
-    print("add-project-gallery: projects page, detail page, nav, sitemap, and homepage teaser updated")
+    print("add-project-gallery: projects page, detail page, homepage hero, nav, sitemap, and homepage teaser updated")
 
 
 if __name__ == "__main__":
