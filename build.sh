@@ -34,11 +34,14 @@ rm -rf "$PROJ/public/ours"
 mkdir -p "$PROJ/public/ours"
 cp -R "$PROJ/public/images/." "$PROJ/public/ours/"
 
+rm -f "$PROJ/public/index.html"
 python3 "$S/relabel_engine.py" --config "$CFG" --map "$MAP" --voice "$VOICE"
 rm -rf "$PROJ/public/assets-f/img" "$PROJ/public/assets-f/js"
 python3 "$PROJ/scripts/add-project-gallery.py"
 node "$PROJ/scripts/scrub-public-output.mjs"
+rm -f "$PROJ/public/index.html"
 python3 "$S/verify_site.py" "$PROJ" --map "$MAP" --json "$PROJ/qa-out/verify.json"
 node "$S/qa_shots.mjs" "$PROJ" --port 4798
+cp "$PROJ/public/home.html" "$PROJ/public/index.html"
 
 echo "BUILD COMPLETE - gates green. Human QA: open $PROJ/qa-out/CONTACT-SHEET.html"
