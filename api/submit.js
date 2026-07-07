@@ -69,7 +69,7 @@ function getBrand(submittedDate) {
   const businessEmail =
     process.env.BUSINESS_EMAIL ||
     process.env.SENDGRID_FROM_EMAIL ||
-    "hello@extremebuildouts.com";
+    "bids@extremebuildouts.com";
 
   return {
     subject: "We received your buildout review request",
@@ -92,8 +92,8 @@ function getBrand(submittedDate) {
       "The team will review your details and follow up about scope, schedule, and next steps.",
     details_title: "Project details",
     call_cta_label: "Call Now",
-    call_phone: process.env.BUSINESS_PHONE || "",
-    call_phone_plain: normalizePhone(process.env.BUSINESS_PHONE),
+    call_phone: process.env.BUSINESS_PHONE || "(713) 587-6922",
+    call_phone_plain: normalizePhone(process.env.BUSINESS_PHONE || "(713) 587-6922"),
     site_cta_label: "Go To Site",
     site_url: siteUrl,
     address_line: process.env.BUSINESS_ADDRESS || "Texas",
@@ -104,7 +104,7 @@ function getBrand(submittedDate) {
       "Commercial and residential construction with A/C, electrical, and plumbing coordinated in house.",
     brand_dark_bg: "#050505",
     brand_gold: "#c6c8ca",
-    supportPhone: process.env.BUSINESS_PHONE || "",
+    supportPhone: process.env.BUSINESS_PHONE || "(713) 587-6922",
     supportEmail: businessEmail,
     service_area: "East Texas, Greater Houston, and Dallas-Fort Worth",
     portfolio_url: `${siteUrl.replace(/\/$/, "")}/projects`,
@@ -135,7 +135,7 @@ async function sendEmails(brand, lead) {
   const fromEmail =
     process.env.SENDGRID_FROM_EMAIL ||
     process.env.BUSINESS_EMAIL ||
-    "hello@extremebuildouts.com";
+    "bids@extremebuildouts.com";
   const from = { email: fromEmail, name: process.env.SENDGRID_FROM_NAME || brand.company_name };
 
   const recipients = [
