@@ -372,6 +372,14 @@ def add_projects_nav(soup):
             about.insert_before(link)
 
 
+def remove_placeholder_phone_links(soup):
+    for link in soup.select('a[href^="tel:"]'):
+        href = (link.get("href") or "").strip()
+        digits = "".join(ch for ch in href if ch.isdigit())
+        if not digits or digits == "15555555555":
+            link.decompose()
+
+
 FOOTER_COLUMNS = [
     (
         "Services",
@@ -800,6 +808,7 @@ def update_footer_and_nav_all():
             continue
         soup = read_soup(path)
         add_projects_nav(soup)
+        remove_placeholder_phone_links(soup)
         ensure_project_css(soup)
         replace_footer(soup)
         set_brand_assets(soup)
@@ -958,15 +967,17 @@ def clean_contact_page():
   <p>Send the project address or area, space type, schedule, known utility needs, and the work you want priced. Extreme Buildouts LLC will review the construction scope and return practical next steps.</p>
 </div>
 <div class="form-block w-form">
-  <form action="/api/contact" method="post">
+  <form action="/api/submit" method="post">
     <div class="form-div"><input class="w-input _w-input" name="fullName" placeholder="Full name" required="" type="text"/></div>
     <div class="form-div"><input class="w-input _w-input" name="phoneNumber" placeholder="Phone" required="" type="tel"/></div>
     <div class="form-div"><input class="w-input _w-input" name="emailAddress" placeholder="Email" required="" type="email"/></div>
     <div class="form-div"><input class="w-input _w-input" name="projectAddress" placeholder="Project address or area" type="text"/></div>
     <div class="form-div"><input class="w-input _w-input" name="serviceType" placeholder="Project type" type="text"/></div>
     <div class="form-div"><textarea class="w-input _w-input" name="projectDetails" placeholder="Tell us about the space, schedule, and work needed" rows="4"></textarea></div>
+    <input autocomplete="off" name="honeypot" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
     <button class="button underlined-text w-button" type="submit">Request a Buildout Review</button>
   </form>
+  <p class="rr-form-status" aria-live="polite"></p>
 </div>
 """
             )
@@ -975,6 +986,43 @@ def clean_contact_page():
     trailing_form = soup.select_one("body > .form-block.w-form")
     if trailing_form is not None:
         trailing_form.decompose()
+    if soup.find(id="rr-contact-submit") is None and soup.body is not None:
+        soup.body.append(
+            soupify(
+                """
+<script id="rr-contact-submit">
+(function(){
+  document.querySelectorAll('form[action="/api/submit"],form[action="/api/contact"]').forEach(function(form){
+    if(form.dataset.rrSubmitBound)return;
+    form.dataset.rrSubmitBound='true';
+    form.addEventListener('submit',function(event){
+      event.preventDefault();
+      var button=form.querySelector('button[type="submit"]');
+      var status=form.parentElement&&form.parentElement.querySelector('.rr-form-status');
+      var original=button?button.textContent:'';
+      if(button){button.disabled=true;button.textContent='Sending';}
+      if(status){status.textContent='';}
+      var data={};
+      new FormData(form).forEach(function(value,key){data[key]=value;});
+      fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+        .then(function(response){if(!response.ok)throw new Error('submit failed');return response.json();})
+        .then(function(){
+          form.reset();
+          if(status){status.textContent='Thanks. Your buildout review request was sent.';}
+        })
+        .catch(function(){
+          if(status){status.textContent='Something went wrong. Please email hello@extremebuildouts.com.';}
+        })
+        .finally(function(){
+          if(button){button.disabled=false;button.textContent=original;}
+        });
+    });
+  });
+})();
+</script>
+"""
+            )
+        )
     write_soup(path, soup)
 
 
