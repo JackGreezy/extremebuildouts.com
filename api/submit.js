@@ -119,6 +119,7 @@ async function sendTemplateEmail(to, from, brand, lead) {
   await sgMail.send({
     to,
     from,
+    subject: brand.subject,
     templateId: TEMPLATE_ID,
     dynamicTemplateData: { ...brand, lead },
   });
