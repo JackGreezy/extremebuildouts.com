@@ -601,8 +601,8 @@ fs.writeFileSync(path.join(project, 'home.config.json'), `${JSON.stringify({
   wordmark_l2: 'Buildouts LLC',
   city: region,
   region,
-  phone: '',
-  email: 'hello@extremebuildouts.com',
+  phone: '(713) 587-6922',
+  email: 'bids@extremebuildouts.com',
   hero_image: '/ours/building-types/retail-stores-shopping-centers.jpg',
   nav: [
     ['Services', '/services'],
@@ -620,8 +620,8 @@ fs.writeFileSync(path.join(project, 'data', 'biz-info.json'), `${JSON.stringify(
   name: bizName,
   city: region,
   region,
-  phone: '',
-  email: 'hello@extremebuildouts.com',
+  phone: '(713) 587-6922',
+  email: 'bids@extremebuildouts.com',
   domain: 'extremebuildouts.com',
 }, null, 2)}\n`);
 

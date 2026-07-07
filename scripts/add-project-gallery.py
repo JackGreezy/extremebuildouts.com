@@ -380,6 +380,27 @@ def remove_placeholder_phone_links(soup):
             link.decompose()
 
 
+def ensure_vercel_analytics(soup):
+    if soup.find(id="rr-vercel-analytics") is not None:
+        return
+    script = soup.new_tag("script")
+    script["id"] = "rr-vercel-analytics"
+    script.string = """
+(function(){
+  window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};
+  if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;
+  var s=document.createElement('script');
+  s.defer=true;
+  s.src='/_vercel/insights/script.js';
+  document.head.appendChild(s);
+})();
+"""
+    if soup.body is not None:
+        soup.body.append(script)
+    elif soup.head is not None:
+        soup.head.append(script)
+
+
 FOOTER_COLUMNS = [
     (
         "Services",
@@ -483,7 +504,7 @@ def build_footer_markup():
       </div>
       <div class="rr-footer-actions">
         <a class="rr-footer-button" href="/contact">Request a Buildout Review</a>
-        <a class="rr-footer-button rr-footer-button-alt" href="mailto:hello@extremebuildouts.com">hello@extremebuildouts.com</a>
+        <a class="rr-footer-button rr-footer-button-alt" href="mailto:bids@extremebuildouts.com">bids@extremebuildouts.com</a>
       </div>
     </div>
     <div class="rr-footer-grid">{''.join(columns)}</div>
@@ -810,6 +831,7 @@ def update_footer_and_nav_all():
         add_projects_nav(soup)
         remove_placeholder_phone_links(soup)
         ensure_project_css(soup)
+        ensure_vercel_analytics(soup)
         replace_footer(soup)
         set_brand_assets(soup)
         write_soup(path, soup)
@@ -1011,7 +1033,7 @@ def clean_contact_page():
           if(status){status.textContent='Thanks. Your buildout review request was sent.';}
         })
         .catch(function(){
-          if(status){status.textContent='Something went wrong. Please email hello@extremebuildouts.com.';}
+          if(status){status.textContent='Something went wrong. Please email bids@extremebuildouts.com.';}
         })
         .finally(function(){
           if(button){button.disabled=false;button.textContent=original;}

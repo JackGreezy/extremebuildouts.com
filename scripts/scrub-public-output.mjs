@@ -109,6 +109,8 @@ function scrubText(input) {
   output = output.replace(/exchange clock/g, 'construction schedule');
   output = output.replace(/replacement property/g, 'project site');
   output = output.replace(/replacement inventory/g, 'field conditions');
+  output = output.replace(/identification records/gi, 'project records');
+  output = output.replace(/identification record/gi, 'project record');
   output = output.replace(/qualified intermediary/g, 'project coordinator');
   output = output.replace(/lender timing/g, 'project timing');
   output = output.replace(/closing records/g, 'project records');

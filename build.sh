@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT=/Users/jackgreenberg/Desktop/rank-and-rent
 S=$ROOT/David/clones/scripts
-PROJ=$ROOT/David/clones/extremebuildouts.com
+PROJ="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REFHOST=extreme-reference
 VOICE=$S/voice/construction-buildouts.json
 PAGES="home=https://extremebuildouts.com/,about=https://extremebuildouts.com/about,contact=https://extremebuildouts.com/contact,index=https://extremebuildouts.com/projects,slug=https://extremebuildouts.com/projects/mechanical-room-buildout"
