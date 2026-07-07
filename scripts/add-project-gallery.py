@@ -6,7 +6,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup, NavigableString
 
-PROJECT = Path("/Users/jackgreenberg/Desktop/rank-and-rent/David/clones/extremebuildouts.com")
+PROJECT = Path("/Users/jackgreenberg/Desktop/SiteReviver/extremebuildouts.com")
 PUBLIC = PROJECT / "public"
 MEDIA_JSON = PUBLIC / "ours/projects/project-media.json"
 DOMAIN = "https://extremebuildouts.com"

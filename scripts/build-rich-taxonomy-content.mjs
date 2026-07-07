@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const project = path.resolve('/Users/jackgreenberg/Desktop/rank-and-rent/David/clones/extremebuildouts.com');
+const project = path.resolve('/Users/jackgreenberg/Desktop/SiteReviver/extremebuildouts.com');
 const bizName = 'Extreme Buildouts LLC';
 const region = 'Texas';
 const turfRoot = path.resolve('/Users/jackgreenberg/Desktop/rank-and-rent/brandon/turf');
